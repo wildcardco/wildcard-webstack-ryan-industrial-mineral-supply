@@ -1,0 +1,240 @@
+{
+  "brief_status": "complete",
+  "gaps": [
+    "Blasting and painting prices are not published. Show none and route these jobs to a phone quote.",
+    "No founding year is published. The site states only 'over 17 years of experience'.",
+    "No business licenses or certifications are verified.",
+    "Stock is unverified. Product pages show isInStock true with no quantity, so the product pages must say 'stock unverified'.",
+    "Exact hex values inside the logo artwork were not measured. Brand colors come from site theme CSS variables and header menu rules only.",
+    "Two logo candidate files were found. Which one is the header file FFF__industrial_mineral_01.png must be confirmed before use.",
+    "It is unconfirmed whether (219) 237-2647, shown on the truck in a GBP photo, is a current business number. Do not use it as the site phone.",
+    "No Street View exterior is available (thumbnail returned HTTP 403).",
+    "The on-site gallery images were not opened. Gallery content must come from viewed GBP photos only until it is confirmed.",
+    "The 4.7 rating from 6 reviews was supplied in the prompt and not rechecked. Do not present it as freshly verified, and use no review quotes.",
+    "Legal suffix such as 'Inc.' was not seen on the opened pages. Use 'Industrial Mineral Supply' only.",
+    "The GBP photo URLs were not individually mapped to their subjects. Confirm which URL shows the paint booth, blast room, truck, and logos before placing them.",
+    "Aluminum Oxide - 8 lbs. BOX has no published description."
+  ],
+  "path": "upgrade",
+  "kit": "flowbite-vue",
+  "stack": {
+    "framework": "astro",
+    "styling": "tailwind-v4",
+    "islands": "vue3",
+    "island_files": ".vue <script setup>"
+  },
+  "business": {
+    "name": "Industrial Mineral Supply",
+    "town": "Griffith, IN",
+    "category": "Sandblasting service and abrasive-media supplier",
+    "services": [
+      "Sandblasting/media blasting to remove paint, rust, and oxidation residue",
+      "Glass bead blasting: less aggressive, gives a satin finish on stainless steel",
+      "Plastic media blasting: described as preferred for aviation, with no surface deformation",
+      "Industrial painting in a booth with zinc primers and epoxy paints on pipes, pumps, and frames (the site calls this newly added)",
+      "Pickup and delivery in Chicagoland and Northwest Indiana: 16 ft truck bed, 9,000 lb max load, 12,000 lb lift",
+      "Retail abrasive media (shop titled 'Abrasives')"
+    ],
+    "phone": "(708) 895-6070",
+    "address": "1944 N. Griffith Blvd. Suite C, Griffith, IN 46319",
+    "rating": 4.7,
+    "review_count": 6
+  },
+  "brand": {
+    "logo": {
+      "found": true,
+      "source_url": "https://static.wixstatic.com/media/86cebe_c66255e8f25a4292a0f18b44bd30a3f2~mv2.png",
+      "notes": "The existing site's header logo is the file FFF__industrial_mineral_01.png. It is a blue wordmark with a gray/blue hexagon and triangle mark, and the favicon is that mark alone. Two candidate files were found: the source_url above and https://static.wixstatic.com/media/85c608_03b66576faf14c5c999e91cb3ff76edd%7Emv2.png. Confirm which one is the header wordmark before use. Do NOT use the separate GBP 'IMS blaster' wordmark as the website header logo."
+    },
+    "colors": [
+      {
+        "hex": "#1f2736",
+        "role": "dark / header menu bar background",
+        "guessed": false
+      },
+      {
+        "hex": "#1748d7",
+        "role": "primary (link/hover blue from header menu)",
+        "guessed": false
+      },
+      {
+        "hex": "#52b4ff",
+        "role": "secondary (selected/active nav state)",
+        "guessed": false
+      },
+      {
+        "hex": "#edcd1f",
+        "role": "accent (action color for CTA buttons)",
+        "guessed": false
+      },
+      {
+        "hex": "#3b3a3a",
+        "role": "body text",
+        "guessed": false
+      },
+      {
+        "hex": "#f7f7f7",
+        "role": "light section background",
+        "guessed": false
+      },
+      {
+        "hex": "#ffffff",
+        "role": "base background",
+        "guessed": false
+      },
+      {
+        "hex": "#000000",
+        "role": "high-contrast text",
+        "guessed": false
+      }
+    ],
+    "fonts": {
+      "observed": [
+        "avenir-lt-w01_85-heavy (headings on Wix site)",
+        "din-next-w01-light",
+        "montserrat",
+        "open sans condensed"
+      ],
+      "kit_recommendation": "Use Flowbite's default type scale and do not restyle the kit. Montserrat, which is observed on the current site, may be used for headings, with the system sans-serif stack for body text. Do not add unobserved display fonts."
+    },
+    "tone": "Direct and practical shop language. Lead with the published tagline 'Superior quality. Unbeatable service.' Describe processes plainly: what each media removes, what finish it leaves, and what the truck can carry. Use no hype, no invented credentials, and no superlatives beyond the published tagline."
+  },
+  "site_map": {
+    "pages": [
+      {
+        "path": "/",
+        "purpose": "Home. Shows the tagline, a summary of core services, the pickup/delivery limits, the 3-product abrasives teaser, hours, and the call-for-quote CTA.",
+        "nav_label": "HOME"
+      },
+      {
+        "path": "/services",
+        "purpose": "Detailed sections for sandblasting/media blasting, glass bead, plastic media, industrial painting (newly added), and pickup/delivery with truck limits. Quote by phone, with no prices.",
+        "nav_label": "SERVICES"
+      },
+      {
+        "path": "/about",
+        "purpose": "The published line 'over 17 years of experience in sandblast supply and service', the Griffith location, hours, and service area (Chicagoland and Northwest Indiana).",
+        "nav_label": "ABOUT"
+      },
+      {
+        "path": "/gallery",
+        "purpose": "Viewed GBP photos only: paint booth, blast room, and work truck. Captions are factual.",
+        "nav_label": "GALLERY"
+      },
+      {
+        "path": "/contact",
+        "purpose": "Phone (708) 895-6070, email kevinjr@imsblasting.com, address, hours, and a static map link. There is no working form and nothing is submitted.",
+        "nav_label": "CONTACT"
+      },
+      {
+        "path": "/shop",
+        "purpose": "Abrasives sample index with the 3 verified products, the published shipping note, and the all-sales-final policy. There is no cart or checkout.",
+        "nav_label": "BUY ABRASIVES"
+      },
+      {
+        "path": "/shop/tru-abrasives-crushed-glass-blast-media-10-lbs",
+        "purpose": "Sample product page: Tru Abrasives Crushed Glass Blast Media - 10 lbs., listed $24.99, stock unverified.",
+        "nav_label": ""
+      },
+      {
+        "path": "/shop/urea-plastic-blast-media-5-lbs",
+        "purpose": "Sample product page: Urea Plastic Blast Media - 5 lbs., listed $35.99, stock unverified.",
+        "nav_label": ""
+      },
+      {
+        "path": "/shop/aluminum-oxide-8-lbs-box",
+        "purpose": "Sample product page: Aluminum Oxide - 8 lbs. BOX, listed $25.99, stock unverified, no published description.",
+        "nav_label": ""
+      }
+    ],
+    "nav": [
+      "HOME",
+      "SERVICES",
+      "ABOUT",
+      "GALLERY",
+      "CONTACT",
+      "BUY ABRASIVES"
+    ],
+    "footer": [
+      "Industrial Mineral Supply",
+      "1944 N. Griffith Blvd. Suite C, Griffith, IN 46319",
+      "(708) 895-6070",
+      "kevinjr@imsblasting.com",
+      "Hours: Mon–Fri 8:00 am–4:00 pm; Sat–Sun closed",
+      "Facebook: https://www.facebook.com/profile.php?id=100064210662665",
+      "TikTok: https://www.tiktok.com/@industrialmineralsupply",
+      "© 2026 by Industrial Mineral Supply.",
+      "Preview notice: sample site. No orders, payments, or messages are processed."
+    ]
+  },
+  "page_spec": {
+    "home_sections": [
+      "Header: logo wordmark, the 6-item nav preserved from the current site, and a click-to-call button showing (708) 895-6070 in accent #edcd1f",
+      "Hero: the tagline 'Superior quality. Unbeatable service.', the subline 'Sandblast services and abrasive supply in Griffith, IN', the primary CTA 'Get a quote: (708) 895-6070', and the secondary CTA 'Buy Abrasives' linking to /shop. Background is the blast room photo.",
+      "Services grid: 4 Flowbite cards for media blasting, glass bead, plastic media, and industrial painting (labeled 'newly added'), each linking to /services",
+      "Pickup and delivery band: Chicagoland and Northwest Indiana, 16 ft truck bed, 9,000 lb max load, 12,000 lb lift",
+      "Experience strip: 'over 17 years of experience in sandblast supply and service'",
+      "Abrasives teaser: the 3 sample product cards with listed prices, a 'stock unverified' badge, and a link to /shop",
+      "Hours and location: hours table, address, and phone, with a static map link",
+      "Footer"
+    ],
+    "must_include": [
+      "Address as published: 1944 N. Griffith Blvd. Suite C, Griffith, IN 46319",
+      "Phone (708) 895-6070 as the only site phone",
+      "Email kevinjr@imsblasting.com",
+      "Hours: Mon–Fri 8:00 am–4:00 pm; Sat–Sun closed",
+      "Tagline: Superior quality. Unbeatable service.",
+      "The line 'over 17 years of experience in sandblast supply and service'",
+      "All named services, including the pickup/delivery limits (16 ft bed, 9,000 lb max load, 12,000 lb lift)",
+      "Shop titled 'Abrasives' with the nav label 'BUY ABRASIVES'",
+      "Exactly 3 sample products with their listed prices ($24.99, $35.99, $25.99), each marked 'stock unverified' and 'price as listed on imsblasting.com'",
+      "A quote CTA for blasting and painting by phone",
+      "On product pages: 'All sales are final' due to safety and contamination concerns; IMS will correct its own errors at no charge",
+      "The shop note as published: free shipping to the continental U.S.; Alaska, Hawaii, and international orders may cost more",
+      "A preview disclaimer that ordering, payment, login, and messaging are not active"
+    ],
+    "avoid": [
+      "Any blasting or painting prices",
+      "A founding year, awards, licenses, or certifications",
+      "Presenting the crushed-glass product text (QPL, CARB, SSPC AB-1, MIL-A-22262B(SH), select-plant approvals) as company credentials. If shown at all, it must stay in the product description, attributed to the product.",
+      "Implying IMS manufactures plastic media",
+      "The full 10-item catalog",
+      "A working login, cart, checkout, payment, order form, or contact form submission",
+      "(219) 237-2647 as a site phone",
+      "The GBP 'IMS blaster' logo as the header logo",
+      "Review quotes, or presenting the 4.7 rating from 6 reviews as freshly verified",
+      "Using the 'Inc.' legal suffix",
+      "Invented stock counts or SKUs",
+      "Color #ff4040 and any colors not in the brand list"
+    ],
+    "photo_plan": "Use only GBP photos that were viewed. (1) The blue blast room with OPEN sign and red blast pot goes in the home hero and the media-blasting section. (2) The open paint booth with green filter panels and yellow drum goes in the industrial painting section. (3) The white Ford stake-bed truck with the IMS blaster mark goes in the pickup/delivery band. Crop or blur the door phone number (219) 237-2647, or caption clearly so it is not presented as the contact number. All three appear in /gallery with factual captions. Confirm the URL-to-subject mapping before placement. Do not use the logo files as photos, the Street View thumbnail (HTTP 403), or the unopened Wix gallery images. Product cards use neutral placeholders unless product images are confirmed from the 3 product pages.",
+    "cta": "Get a quote: (708) 895-6070 (tel: link). Secondary: Buy Abrasives (/shop, browse only, no payment).",
+    "island_framework": "vue3"
+  },
+  "interactive_islands": [
+    {
+      "name": "SiteNavbar",
+      "purpose": "Responsive header nav with a mobile collapse toggle for the 6 preserved nav items, plus the click-to-call button",
+      "kit_component": "flowbite-vue Navbar (Navbar, NavbarCollapse, NavbarLink)"
+    },
+    {
+      "name": "ServicesTabs",
+      "purpose": "On /services, switches between media blasting, glass bead, plastic media, industrial painting, and pickup/delivery details. All content is static text with no pricing.",
+      "kit_component": "flowbite-vue Tabs (Tabs, Tab)"
+    },
+    {
+      "name": "GalleryLightbox",
+      "purpose": "On /gallery, opens the viewed GBP photos larger with captions",
+      "kit_component": "flowbite-vue Modal"
+    },
+    {
+      "name": "ProductInfoAccordion",
+      "purpose": "On each of the 3 product pages, expands the description (when published), the shipping note, and the all-sales-final return policy. There is no add-to-cart.",
+      "kit_component": "flowbite-vue Accordion (Accordion, AccordionPanel, AccordionHeader, AccordionContent)"
+    }
+  ],
+  "existing_site": {
+    "discovered": true,
+    "notes": "This is an upgrade proposal for the existing Wix site at imsblasting.com (HTTP 200). The public sitemap lists only / and /shop. Current nav is HOME, SERVICES, ABOUT, GALLERY, CONTACT, BUY ABRASIVES, where the first five are single-page anchors. The upgrade preserves those labels and order but turns each into its own static page. The shop ('Abrasives') has 10 products, and this preview shows only 3, all marked New Arrival on the shop cards. Wix account, cart, and checkout routes exist but are not reproduced. The contact form was not submitted and is not replicated as a working form. Footer social links are Facebook and TikTok, with the text '© 2026 by Industrial Mineral Supply.' The contact block also prints '1944 Griffith Blvd. Suite C', and the header form '1944 N. Griffith Blvd. Suite C' is used. flowbite-vue was chosen because the business is primarily a blasting and painting service with phone quotes; the abrasives shop is presented as a static 3-item sample using Flowbite cards."
+  }
+}
