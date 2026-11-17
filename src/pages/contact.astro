@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import HoursTable from '../components/HoursTable.astro';
+import { address, email, mapUrl, phoneDisplay, phoneTel, previewNotice } from '../data/site';
+---
+<Base title="Contact | Industrial Mineral Supply" description="Call Industrial Mineral Supply in Griffith, IN. No message form is submitted on this preview.">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <h1 class="text-4xl font-bold">Contact</h1>
+    <p class="mt-4 max-w-3xl text-[#3b3a3a]">
+      There is no message form on this preview. Nothing is submitted. {previewNotice}
+    </p>
+    <div class="mt-10 grid gap-10 md:grid-cols-2">
+      <section class="space-y-3 text-[#3b3a3a]">
+        <p>
+          Phone: <a class="content-link" href={phoneTel}>{phoneDisplay}</a>
+        </p>
+        <p>
+          Email: <a class="content-link" href={`mailto:${email}`}>{email}</a>
+        </p>
+        <p>{address}</p>
+        <p>
+          <a class="content-link" href={mapUrl} rel="noopener noreferrer" target="_blank">Open the address in Google Maps</a>
+        </p>
+        <p>
+          <a class="btn mt-2 inline-flex items-center rounded-lg bg-[#edcd1f] px-5 py-3 font-semibold text-black" href={phoneTel}>
+            Get a quote: {phoneDisplay}
+          </a>
+        </p>
+      </section>
+      <section>
+        <h2 class="mb-3 text-2xl font-semibold">Hours</h2>
+        <HoursTable />
+      </section>
+    </div>
+  </main>
+</Base>

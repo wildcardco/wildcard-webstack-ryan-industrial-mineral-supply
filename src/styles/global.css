@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "flowbite-vue/index.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-header: #1f2736;
+  --color-brand: #1748d7;
+  --color-nav: #52b4ff;
+  --color-accent: #edcd1f;
+  --color-ink: #3b3a3a;
+  --color-paper: #f7f7f7;
+}
+
+body {
+  background: #ffffff;
+  color: #3b3a3a;
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    color: #000000;
+  }
+}
+
+.content-link {
+  color: #1748d7;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content-link:hover,
+.content-link:focus-visible {
+  color: #52b4ff;
+}
+
+.site-header nav img {
+  height: 3.25rem;
+  width: auto;
+  margin-right: 0;
+}
+
+.site-header nav button[aria-controls="navbar-default"] {
+  color: #ffffff;
+}
+
+.site-header nav button[aria-controls="navbar-default"]:hover,
+.site-header nav button[aria-controls="navbar-default"]:focus-visible {
+  background: #1748d7;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .site-header nav ul {
+    background: #f7f7f7;
+  }
+
+  .site-header nav li a:not(.btn) {
+    color: #1f2736;
+  }
+
+  .site-header nav li a.bg-blue-700 {
+    background-color: #1748d7;
+    color: #ffffff;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-header nav ul {
+    gap: 0.25rem 1rem;
+  }
+
+  .site-header nav ul > li {
+    margin-left: 0;
+  }
+
+  .site-header nav li a {
+    color: #ffffff;
+  }
+
+  .site-header nav li a:hover,
+  .site-header nav li a:focus-visible {
+    color: #52b4ff;
+  }
+
+  .site-header nav li a.bg-blue-700 {
+    color: #52b4ff;
+    background: transparent;
+  }
+}

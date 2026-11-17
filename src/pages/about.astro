@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import HoursTable from '../components/HoursTable.astro';
+import { address, experienceLine, mapUrl, phoneDisplay, phoneTel } from '../data/site';
+---
+<Base title="About | Industrial Mineral Supply" description="Sandblast supply and service in Griffith, IN, serving Chicagoland and Northwest Indiana.">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <h1 class="text-4xl font-bold">About</h1>
+    <p class="mt-6 max-w-3xl text-xl text-[#3b3a3a]">{experienceLine}</p>
+    <div class="mt-10 grid gap-10 md:grid-cols-2">
+      <section>
+        <h2 class="text-2xl font-semibold">Griffith shop</h2>
+        <p class="mt-3 text-[#3b3a3a]">{address}</p>
+        <p class="mt-3">
+          <a class="content-link" href={phoneTel}>{phoneDisplay}</a>
+        </p>
+        <p class="mt-4">
+          <a class="content-link" href={mapUrl} rel="noopener noreferrer" target="_blank">Open the address in Google Maps</a>
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold">Hours</h2>
+        <div class="mt-3">
+          <HoursTable />
+        </div>
+      </section>
+    </div>
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold">Service area</h2>
+      <p class="mt-3 max-w-3xl text-[#3b3a3a]">
+        Pickup and delivery covers Chicagoland and Northwest Indiana. The truck bed is 16 ft, with a 9,000 lb max load and a 12,000 lb lift.
+      </p>
+    </section>
+  </main>
+</Base>

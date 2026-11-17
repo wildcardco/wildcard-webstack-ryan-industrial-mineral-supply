@@ -1,0 +1,19 @@
+{
+  "name": "wildcard-webstack-ryan-industrial-mineral-supply",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build --timings > build-timings.txt 2>&1; s=$?; cat build-timings.txt; exit $s",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/vue": "7.1.4",
+    "@tailwindcss/vite": "4.3.5",
+    "astro": "7.4.10",
+    "flowbite-vue": "0.4.0",
+    "tailwindcss": "4.3.5",
+    "vue": "3.5.45"
+  }
+}

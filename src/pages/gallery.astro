@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import GalleryLightbox from '../components/GalleryLightbox.vue';
+import { galleryPhotos } from '../data/site';
+---
+<Base title="Gallery | Industrial Mineral Supply" description="Blast room, paint booth, and work truck at Industrial Mineral Supply in Griffith, IN.">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <h1 class="text-4xl font-bold">Gallery</h1>
+    <p class="mt-4 max-w-3xl text-[#3b3a3a]">
+      Three photos from the Google Business Profile: the blast room, the paint booth, and the work truck. Click a photo to open it larger.
+    </p>
+    <div class="mt-8">
+      <GalleryLightbox client:load photos={galleryPhotos} />
+    </div>
+  </main>
+</Base>

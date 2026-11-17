@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductBadges from '../../components/ProductBadges.vue';
+import ProductInfoAccordion from '../../components/ProductInfoAccordion.vue';
+import { previewNotice, products, type Product } from '../../data/site';
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props as { product: Product };
+---
+<Base title={`${product.name} | Industrial Mineral Supply`} description={`${product.name}, listed ${product.price}. Stock unverified. No checkout.`}>
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <p>
+      <a class="content-link" href="/shop">Abrasives</a>
+    </p>
+    <div class="mt-6 grid items-start gap-8 md:grid-cols-2">
+      <img
+        src={product.image}
+        alt={product.imageAlt}
+        class="w-full rounded-lg bg-[#f7f7f7] object-contain"
+        width="1200"
+        height="1200"
+      />
+      <div>
+        <h1 class="text-3xl font-bold">{product.name}</h1>
+        <div class="mt-4">
+          <ProductBadges />
+        </div>
+        <p class="mt-4 text-3xl font-semibold text-black">{product.price}</p>
+        <p class="mt-2 text-[#3b3a3a]">price as listed on imsblasting.com</p>
+        <p class="mt-2 text-[#3b3a3a]">Excluding sales tax.</p>
+        <p class="mt-4 text-[#3b3a3a]">There is no add-to-cart button. {previewNotice}</p>
+      </div>
+    </div>
+    <div class="mt-10">
+      <ProductInfoAccordion client:load panels={product.panels} />
+    </div>
+  </main>
+</Base>

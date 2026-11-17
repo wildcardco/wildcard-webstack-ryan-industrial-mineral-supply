@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import HoursTable from '../components/HoursTable.astro';
+import ServiceCards from '../components/ServiceCards.vue';
+import ProductCards from '../components/ProductCards.vue';
+import {
+  address,
+  email,
+  experienceLine,
+  mapUrl,
+  phoneDisplay,
+  phoneTel,
+  photos,
+  tagline,
+} from '../data/site';
+---
+<Base title="Industrial Mineral Supply | Griffith, IN" description="Sandblast services and abrasive supply in Griffith, IN.">
+  <main>
+    <section class="relative isolate min-h-[28rem] overflow-hidden bg-[#1f2736] text-white">
+      <img
+        src={photos.blastRoom.src}
+        alt={photos.blastRoom.alt}
+        width="600"
+        height="400"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[#1f2736]/75"></div>
+      <div class="relative mx-auto flex min-h-[28rem] max-w-6xl flex-col justify-center gap-5 px-6 py-16">
+        <p class="text-sm uppercase tracking-wide text-[#52b4ff]">Griffith, IN</p>
+        <h1 class="max-w-3xl text-4xl font-bold text-white md:text-5xl">{tagline}</h1>
+        <p class="max-w-2xl text-lg text-[#f7f7f7]">Sandblast services and abrasive supply in Griffith, IN</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="btn inline-flex items-center rounded-lg bg-[#edcd1f] px-5 py-3 font-semibold text-black" href={phoneTel}>
+            Get a quote: {phoneDisplay}
+          </a>
+          <a class="btn inline-flex items-center rounded-lg bg-white px-5 py-3 font-semibold text-[#1748d7]" href="/shop">
+            Buy Abrasives
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-14">
+      <h2 class="mb-6 text-3xl font-semibold">Services</h2>
+      <ServiceCards />
+    </section>
+
+    <section class="bg-[#f7f7f7]">
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-6 py-14 md:grid-cols-2">
+        <img
+          src={photos.truck.src}
+          alt={photos.truck.alt}
+          width="1600"
+          height="1067"
+          class="h-72 w-full rounded-lg object-cover"
+        />
+        <div>
+          <h2 class="text-3xl font-semibold">Pickup and delivery</h2>
+          <p class="mt-4 text-[#3b3a3a]">Chicagoland and Northwest Indiana.</p>
+          <ul class="mt-4 list-disc space-y-1 pl-5 text-[#3b3a3a]">
+            <li>16 ft truck bed</li>
+            <li>9,000 lb max load</li>
+            <li>12,000 lb lift</li>
+          </ul>
+          <p class="mt-4 text-sm text-[#3b3a3a]">{photos.truck.caption}</p>
+          <a class="btn mt-6 inline-flex items-center rounded-lg bg-[#edcd1f] px-5 py-3 font-semibold text-black" href={phoneTel}>
+            Get a quote: {phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#1f2736] text-white">
+      <div class="mx-auto max-w-6xl px-6 py-10">
+        <p class="text-2xl font-semibold text-white">{experienceLine}</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-14">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+        <h2 class="text-3xl font-semibold">Abrasives</h2>
+        <a class="content-link" href="/shop">Browse the Abrasives sample</a>
+      </div>
+      <ProductCards />
+    </section>
+
+    <section class="bg-[#f7f7f7]">
+      <div class="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2">
+        <div>
+          <h2 class="mb-4 text-3xl font-semibold">Hours</h2>
+          <HoursTable />
+        </div>
+        <div>
+          <h2 class="mb-4 text-3xl font-semibold">Location</h2>
+          <p class="text-[#3b3a3a]">{address}</p>
+          <p class="mt-3">
+            <a class="content-link" href={phoneTel}>{phoneDisplay}</a>
+          </p>
+          <p class="mt-3">
+            <a class="content-link" href={`mailto:${email}`}>{email}</a>
+          </p>
+          <p class="mt-4">
+            <a class="content-link" href={mapUrl} rel="noopener noreferrer" target="_blank">Open the address in Google Maps</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

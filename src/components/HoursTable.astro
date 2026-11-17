@@ -1,0 +1,14 @@
+---
+import { hours } from '../data/site';
+---
+<table class="w-full border-collapse text-left text-[#3b3a3a]">
+  <caption class="sr-only">Shop hours</caption>
+  <tbody>
+    {hours.map((row) => (
+      <tr class="border-b border-[#f7f7f7]">
+        <th class="py-2 pr-4 font-semibold text-black" scope="row">{row.day}</th>
+        <td class="py-2">{row.hours}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

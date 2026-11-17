@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import ServicesTabs from '../components/ServicesTabs.vue';
+import { phoneDisplay, phoneTel } from '../data/site';
+
+const tab = Astro.url.searchParams.get('tab') ?? 'blasting';
+---
+<Base title="Services | Industrial Mineral Supply" description="Sandblasting, glass bead, plastic media, industrial painting, and pickup in Griffith, IN. Quote by phone.">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <h1 class="text-4xl font-bold">Services</h1>
+    <p class="mt-4 max-w-3xl text-[#3b3a3a]">
+      Sandblasting and painting are quoted by phone. No blasting or painting prices are listed.
+    </p>
+    <p class="mt-4">
+      <a class="btn inline-flex items-center rounded-lg bg-[#edcd1f] px-5 py-3 font-semibold text-black" href={phoneTel}>
+        Get a quote: {phoneDisplay}
+      </a>
+    </p>
+    <div class="mt-10">
+      <ServicesTabs client:load initialTab={tab} />
+    </div>
+  </main>
+</Base>

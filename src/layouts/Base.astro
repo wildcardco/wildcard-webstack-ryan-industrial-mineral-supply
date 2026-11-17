@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+import SiteNavbar from '../components/SiteNavbar.vue';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const {
+  title = 'Industrial Mineral Supply',
+  description = 'Sandblast services and abrasive supply in Griffith, IN.',
+} = Astro.props;
+
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen antialiased">
+    <div class="site-header">
+      <SiteNavbar client:load currentPath={path} />
+    </div>
+    <slot />
+    <SiteFooter />
+  </body>
+</html>
