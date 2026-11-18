@@ -1,6 +1,16 @@
 @import "tailwindcss";
-@import "flowbite-vue/index.css";
+
+/* Class-based dark variant, and the class is never applied. Flowbite's
+   prebuilt index.css is not imported: it follows the OS color scheme and
+   references docs-only jumbotron images that are not in this site. */
 @custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../node_modules/flowbite-vue/src/components/FwbAccordion";
+@source "../../node_modules/flowbite-vue/src/components/FwbBadge";
+@source "../../node_modules/flowbite-vue/src/components/FwbCard";
+@source "../../node_modules/flowbite-vue/src/components/FwbModal";
+@source "../../node_modules/flowbite-vue/src/components/FwbNavbar";
+@source "../../node_modules/flowbite-vue/src/components/FwbTabs";
 
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -13,10 +23,40 @@
   --color-paper: #f7f7f7;
 }
 
+html {
+  color-scheme: light;
+}
+
 body {
   background: #ffffff;
   color: #3b3a3a;
   font-family: var(--font-sans);
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+img.absolute.object-cover {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+/* Flowbite cards ship min-w-sm (24rem). Keep them inside the column. */
+.min-w-sm,
+.md\:min-w-xl {
+  min-width: 0;
+  max-width: 100%;
 }
 
 @layer base {
@@ -37,60 +77,109 @@ body {
 
 .content-link:hover,
 .content-link:focus-visible {
-  color: #52b4ff;
+  color: #1748d7;
 }
 
-.site-header nav img {
-  height: 3.25rem;
+.site-header .logo-chip {
+  background: #ffffff;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  max-width: calc(100% - 3.5rem);
+}
+
+.site-header .logo-wordmark {
+  display: block;
+  height: 2.25rem;
   width: auto;
-  margin-right: 0;
+  max-width: 100%;
 }
 
-.site-header nav button[aria-controls="navbar-default"] {
-  color: #ffffff;
+.site-header button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  max-width: none;
 }
 
-.site-header nav button[aria-controls="navbar-default"]:hover,
-.site-header nav button[aria-controls="navbar-default"]:focus-visible {
-  background: #1748d7;
-  color: #ffffff;
+.site-nav {
+  display: none;
+  width: 100%;
+}
+
+.site-nav.is-open {
+  display: block;
 }
 
 @media (max-width: 767px) {
-  .site-header nav ul {
+  .site-nav.is-open {
+    margin-top: 0.75rem;
+    border-radius: 0.5rem;
     background: #f7f7f7;
+    padding: 0.75rem;
   }
 
-  .site-header nav li a:not(.btn) {
+  .site-header .site-nav a:not(.btn) {
     color: #1f2736;
   }
 
-  .site-header nav li a.bg-blue-700 {
+  .site-header .site-nav a.bg-blue-700 {
     background-color: #1748d7;
     color: #ffffff;
   }
 }
 
 @media (min-width: 768px) {
-  .site-header nav ul {
-    gap: 0.25rem 1rem;
+  .site-header .logo-wordmark {
+    height: 3.25rem;
   }
 
-  .site-header nav ul > li {
-    margin-left: 0;
+  .site-header .logo-chip {
+    max-width: none;
   }
 
-  .site-header nav li a {
+  .site-nav,
+  .site-nav.is-open {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .site-header .site-nav a:not(.btn) {
     color: #ffffff;
   }
 
-  .site-header nav li a:hover,
-  .site-header nav li a:focus-visible {
+  .site-header .site-nav a:not(.btn):hover,
+  .site-header .site-nav a:not(.btn):focus-visible {
     color: #52b4ff;
   }
 
-  .site-header nav li a.bg-blue-700 {
-    color: #52b4ff;
+  .site-header .site-nav a.bg-blue-700 {
     background: transparent;
+    color: #52b4ff;
   }
+}
+
+/* Kit text that would otherwise stay gray on white. */
+.product-info button,
+[role="tab"] {
+  color: #1f2736;
+}
+
+[role="tab"][aria-selected="true"] {
+  color: #1748d7;
+}
+
+.product-info button {
+  background-color: #ffffff;
+}
+
+.product-info button:hover,
+.product-info button:focus-visible {
+  background-color: #f7f7f7;
+  color: #1f2736;
 }

@@ -4,10 +4,11 @@ import { products } from '../data/site';
 </script>
 
 <template>
-  <div class="grid gap-6 md:grid-cols-3">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
     <fwb-card
       v-for="product in products"
       :key="product.slug"
+      class="w-full max-w-full bg-white text-[#1f2736]"
       :href="`/shop/${product.slug}`"
       :img-alt="product.imageAlt"
       :img-src="product.image"
@@ -18,9 +19,9 @@ import { products } from '../data/site';
           <fwb-badge>New Arrival</fwb-badge>
           <fwb-badge type="dark">stock unverified</fwb-badge>
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-black">{{ product.name }}</h3>
-        <p class="text-xl font-semibold text-black">{{ product.price }}</p>
-        <p class="mt-2 text-sm text-[#3b3a3a]">price as listed on imsblasting.com</p>
+        <h3 class="mb-2 text-lg font-semibold">{{ product.name }}</h3>
+        <p class="text-xl font-semibold">{{ product.price }}</p>
+        <p class="mt-2 text-sm">price as listed on imsblasting.com</p>
       </div>
     </fwb-card>
   </div>

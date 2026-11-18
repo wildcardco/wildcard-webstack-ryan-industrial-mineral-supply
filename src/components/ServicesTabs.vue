@@ -20,7 +20,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <fwb-tabs v-model="activeTab" variant="underline">
+  <fwb-tabs
+    v-model="activeTab"
+    class="bg-white text-[#1f2736]"
+    item-class="text-[#1f2736]"
+    item-active-class="text-[#1748d7]"
+    variant="underline"
+  >
     <fwb-tab name="blasting" title="Media blasting">
       <div class="grid gap-6 py-4 md:grid-cols-2">
         <img
