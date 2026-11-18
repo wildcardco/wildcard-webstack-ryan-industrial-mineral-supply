@@ -72,6 +72,9 @@ async function assertProductLayout(page: Page, viewportWidth: number) {
     boxes.push(box!);
   }
 
+  const stockLabel = await page.getByText(/stock unverified/i).count();
+  expect(stockLabel, 'stock unverified badge').toBe(0);
+
   if (count === 10) {
     for (let i = 0; i < count; i += 1) {
       const text = await cards.nth(i).innerText();
