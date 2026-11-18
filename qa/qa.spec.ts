@@ -14,16 +14,16 @@ const pages = [
   ['gallery', '/gallery'],
   ['contact', '/contact'],
   ['shop', '/shop'],
-  ['product-glass-10', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs-1'],
-  ['product-urea-5', '/shop/urea-plastic-blast-media-5-lbs-1'],
-  ['product-oxide-8', '/shop/aluminum-oxide-8-lbs-box'],
-  ['product-beads-40', '/shop/glass-beads-blast-media-40-lbs'],
-  ['product-oxide-50', '/shop/aluminum-oxide-50-lbs'],
-  ['product-glass-40', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs'],
-  ['product-walnut-15', '/shop/walnut-shells-blast-media-5-lbs'],
-  ['product-urea-20', '/shop/urea-plastic-blast-media-5-lbs'],
-  ['product-beads-10', '/shop/glass-beads-blast-media-10-lbs'],
-  ['product-oxide-12', '/shop/aluminum-oxide-blast-media-12-lbs'],
+  ['product-glass-10', '/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1'],
+  ['product-urea-5', '/product-page/urea-plastic-blast-media-5-lbs-1'],
+  ['product-oxide-8', '/product-page/aluminum-oxide-8-lbs-box'],
+  ['product-beads-40', '/product-page/glass-beads-blast-media-40-lbs'],
+  ['product-oxide-50', '/product-page/aluminum-oxide-50-lbs'],
+  ['product-glass-40', '/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs'],
+  ['product-walnut-15', '/product-page/walnut-shells-blast-media-5-lbs'],
+  ['product-urea-20', '/product-page/urea-plastic-blast-media-5-lbs'],
+  ['product-beads-10', '/product-page/glass-beads-blast-media-10-lbs'],
+  ['product-oxide-12', '/product-page/aluminum-oxide-blast-media-12-lbs'],
 ] as const;
 
 const viewports = [
@@ -74,6 +74,14 @@ async function assertProductLayout(page: Page, viewportWidth: number) {
 
   const stockLabel = await page.getByText(/stock unverified/i).count();
   expect(stockLabel, 'stock unverified badge').toBe(0);
+
+  if (count > 0) {
+    const hrefs = await cards.evaluateAll((els) => els.map((el) => el.getAttribute('href') ?? ''));
+    for (const href of hrefs) {
+      expect(href.startsWith('/product-page/'), href).toBe(true);
+      expect(href.startsWith('/shop/'), href).toBe(false);
+    }
+  }
 
   if (count === 10) {
     for (let i = 0; i < count; i += 1) {
@@ -145,6 +153,10 @@ for (const scheme of schemes) {
         await page.emulateMedia({ colorScheme: scheme });
         await page.setViewportSize({ width: viewport.width, height: viewport.height });
         await page.goto(url, { waitUntil: 'networkidle' });
+
+        if (url.startsWith('/product-page/')) {
+          await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', url);
+        }
 
         const layout = await overflow(page);
         expect(layout.scrollWidth, layout.offenders.join('\n')).toBeLessThanOrEqual(layout.viewport + 1);
@@ -223,3 +235,15 @@ for (const scheme of schemes) {
     });
   });
 }
+
+test('retired /shop product routes are not served', async ({ page }) => {
+  const retired = pages
+    .map(([, url]) => url)
+    .filter((url) => url.startsWith('/product-page/'))
+    .map((url) => url.replace('/product-page/', '/shop/'));
+
+  for (const url of retired) {
+    const response = await page.goto(url, { waitUntil: 'commit' });
+    expect(response?.status(), url).toBe(404);
+  }
+});
