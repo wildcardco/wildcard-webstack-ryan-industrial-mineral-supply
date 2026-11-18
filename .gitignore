@@ -3,3 +3,5 @@ dist/
 .astro/
 build-timings.txt
 .env
+test-results/
+playwright-report/
