@@ -13,7 +13,7 @@ export function getStaticPaths() {
 
 const { product } = Astro.props as { product: Product };
 ---
-<Base title={`${product.name} | Industrial Mineral Supply`} description={`${product.name}, listed ${product.price}. Stock unverified. No checkout.`}>
+<Base title={`${product.name} | Industrial Mineral Supply`} description={`${product.name}, listed ${product.price}. No checkout.`}>
   <main class="mx-auto max-w-6xl px-6 py-12">
     <p>
       <a class="content-link" href="/shop">Abrasives</a>
@@ -24,9 +24,11 @@ const { product } = Astro.props as { product: Product };
       </div>
       <div>
         <h1 class="text-3xl font-bold">{product.name}</h1>
-        <div class="mt-4">
-          <ProductBadges newArrival={product.newArrival} />
-        </div>
+        {product.newArrival && (
+          <div class="mt-4">
+            <ProductBadges newArrival={product.newArrival} />
+          </div>
+        )}
         <p class="mt-4 text-3xl font-semibold text-black">{product.price}</p>
         <p class="mt-2 text-[#3b3a3a]">price as listed on imsblasting.com</p>
         <p class="mt-2 text-[#3b3a3a]">Excluding sales tax.</p>

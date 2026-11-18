@@ -150,7 +150,7 @@ export const products: Product[] = [
       'https://static.wixstatic.com/media/85c608_be07c47afca6412fb994b4dc861d0fc5~mv2.jpg',
     pageSourceUrl:
       'https://www.imsblasting.com/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1',
-    summary: '10 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '10 lb listing. Price as listed on imsblasting.com.',
     panels: [
       {
         title: 'Description',
@@ -173,7 +173,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_24dfab61390d45d385dc8c7d6b791d51~mv2.jpeg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/urea-plastic-blast-media-5-lbs-1',
-    summary: '5 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '5 lb listing. Price as listed on imsblasting.com.',
     panels: [
       {
         title: 'Description',
@@ -196,7 +196,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_047d7bdc030f4150836fdf3dafd9d2a5~mv2.jpg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/aluminum-oxide-8-lbs-box',
-    summary: '8 lb box. Stock unverified. No description is published. Price as listed on imsblasting.com.',
+    summary: '8 lb box. No description is published. Price as listed on imsblasting.com.',
     panels: [sharedPanels.shipping, sharedPanels.returns],
   },
   {
@@ -209,7 +209,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_4a74a602ea874099b8c1478919601f4b~mv2.png',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/glass-beads-blast-media-40-lbs',
-    summary: '40 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '40 lb listing. Price as listed on imsblasting.com.',
     panels: [
       { title: 'Description', paragraphs: [beadCopy] },
       sharedPanels.shipping,
@@ -226,7 +226,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_b1edb47082d04da1b7bb69c2e6a3bac1~mv2.jpg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/aluminum-oxide-50-lbs',
-    summary: '50 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '50 lb listing. Price as listed on imsblasting.com.',
     panels: [
       { title: 'Description', paragraphs: [oxideCopy] },
       sharedPanels.shipping,
@@ -244,7 +244,7 @@ export const products: Product[] = [
       'https://static.wixstatic.com/media/85c608_be07c47afca6412fb994b4dc861d0fc5~mv2.jpg',
     pageSourceUrl:
       'https://www.imsblasting.com/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs',
-    summary: '40 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '40 lb listing. Price as listed on imsblasting.com.',
     panels: [
       {
         title: 'Description',
@@ -267,7 +267,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_00abea0a1b9c4cb3b2096f16535cbe20~mv2.jpg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/walnut-shells-blast-media-5-lbs',
-    summary: '15 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '15 lb listing. Price as listed on imsblasting.com.',
     panels: [
       {
         title: 'Description',
@@ -289,7 +289,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_24dfab61390d45d385dc8c7d6b791d51~mv2.jpeg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/urea-plastic-blast-media-5-lbs',
-    summary: '20 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '20 lb listing. Price as listed on imsblasting.com.',
     panels: [
       {
         title: 'Description',
@@ -312,7 +312,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_4a74a602ea874099b8c1478919601f4b~mv2.png',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/glass-beads-blast-media-10-lbs',
-    summary: '10 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '10 lb listing. Price as listed on imsblasting.com.',
     panels: [
       { title: 'Description', paragraphs: [beadCopy] },
       sharedPanels.shipping,
@@ -329,7 +329,7 @@ export const products: Product[] = [
     imageSourceUrl:
       'https://static.wixstatic.com/media/85c608_b1edb47082d04da1b7bb69c2e6a3bac1~mv2.jpg',
     pageSourceUrl: 'https://www.imsblasting.com/product-page/aluminum-oxide-blast-media-12-lbs',
-    summary: '12 lb listing. Stock unverified. Price as listed on imsblasting.com.',
+    summary: '12 lb listing. Price as listed on imsblasting.com.',
     panels: [
       { title: 'Description', paragraphs: [oxideCopy] },
       sharedPanels.shipping,

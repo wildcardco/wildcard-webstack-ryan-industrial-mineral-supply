@@ -299,12 +299,6 @@ img.absolute.object-cover {
   color: #000000 !important;
 }
 
-.product-badges > span.badge-stock {
-  background-color: #ffffff !important;
-  color: #1f2736 !important;
-  box-shadow: inset 0 0 0 1px #1f2736;
-}
-
 .browse-btn {
   display: inline-flex;
   align-items: center;
