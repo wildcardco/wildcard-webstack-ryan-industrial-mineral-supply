@@ -1,0 +1,279 @@
+{
+  "branch": "cursor/ws-v2-brief-visuals-industrial-mineral-supply-b699",
+  "refs": [
+    {
+      "n": 1,
+      "name": "Clemco Industries",
+      "url": "https://www.clemcoindustries.com",
+      "file": "brief/visuals/ref-1.jpg",
+      "ok": true
+    },
+    {
+      "n": 2,
+      "name": "Kramer Industries",
+      "url": "https://www.kramerindustriesonline.com",
+      "file": "brief/visuals/ref-2.jpg",
+      "ok": true
+    },
+    {
+      "n": 3,
+      "name": "Marco",
+      "url": "https://www.marco.us",
+      "file": "brief/visuals/ref-3.jpg",
+      "ok": true
+    }
+  ],
+  "media": {
+    "counts": {
+      "site_photos": 12,
+      "gbp_photos": 7,
+      "logos": 2,
+      "videos": 1,
+      "product_images": 71,
+      "icons_excluded": 5
+    },
+    "items": [
+      {
+        "file": "brief/visuals/media-1.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_c66255e8f25a4292a0f18b44bd30a3f2~mv2.png",
+        "type": "logo",
+        "px": [
+          2593,
+          1007
+        ],
+        "verdict": "use",
+        "reason": "Official wordmark",
+        "use_for": "Header on white"
+      },
+      {
+        "file": "brief/visuals/media-2.jpg",
+        "src": "https://static.wixstatic.com/media/85c608_03b66576faf14c5c999e91cb3ff76edd~mv2.png",
+        "type": "logo",
+        "px": [
+          867,
+          1007
+        ],
+        "verdict": "use",
+        "reason": "Diamond mark only",
+        "use_for": "Favicon"
+      },
+      {
+        "file": "brief/visuals/media-3.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_06eedf9086d343d3927cd522e9b256bd~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          1505,
+          2826
+        ],
+        "verdict": "use",
+        "reason": "Real half-blasted tank",
+        "use_for": "Hero"
+      },
+      {
+        "file": "brief/visuals/media-4.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_07d6fc360703423fab37337c2827a161~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          4000,
+          3000
+        ],
+        "verdict": "use",
+        "reason": "Finished shop hopper, 4000 px",
+        "use_for": "Painting card and gallery"
+      },
+      {
+        "file": "brief/visuals/media-5.jpg",
+        "src": "https://static.wixstatic.com/media/85c608_e89467ab946149e3b657fa4d7164f58c~mv2.jpg",
+        "type": "photo",
+        "px": [
+          2268,
+          4032
+        ],
+        "verdict": "use",
+        "reason": "Real primed hood",
+        "use_for": "Gallery"
+      },
+      {
+        "file": "brief/visuals/media-6.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_abaebb386a5e47419b981f84127ba83d~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          2794,
+          882
+        ],
+        "verdict": "use",
+        "reason": "Clean cut-out of a blasted part",
+        "use_for": "Service card"
+      },
+      {
+        "file": "brief/visuals/media-7.jpg",
+        "src": "https://static.wixstatic.com/media/85c608_929e95ee88d8425c934cff9453326d3d~mv2.jpg",
+        "type": "photo",
+        "px": [
+          1144,
+          1049
+        ],
+        "verdict": "use",
+        "reason": "Real before and after of a machined plate",
+        "use_for": "Before/after split"
+      },
+      {
+        "file": "brief/visuals/media-8.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_cdb8780be4dc484d86f433d3dc5ee42f~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          5472,
+          3648
+        ],
+        "verdict": "check",
+        "reason": "Door shows (219) 237-2647; site lists (708) 895-6070",
+        "use_for": "Delivery photo after the number is confirmed"
+      },
+      {
+        "file": "brief/visuals/media-9.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_5f7a2cf669c340fca4f63e400528b784~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          5616,
+          3744
+        ],
+        "verdict": "check",
+        "reason": "Generic bridge blast, no camera EXIF, not the Griffith shop",
+        "use_for": "Do not use as the hero until the source is confirmed"
+      },
+      {
+        "file": "brief/visuals/media-10.jpg",
+        "src": "https://video.wixstatic.com/video/85c608_7127f277a7314aa0bcaba15162b8849c/1080p/mp4/file.mp4",
+        "type": "video",
+        "px": [
+          1920,
+          1080
+        ],
+        "verdict": "check",
+        "reason": "1080p background loop, source not labeled",
+        "use_for": "Optional muted hero only if the source is confirmed"
+      },
+      {
+        "file": "brief/visuals/media-11.jpg",
+        "src": "https://static.wixstatic.com/media/86cebe_316fc122b3d54900a620741443aeec24~mv2.jpeg",
+        "type": "photo",
+        "px": [
+          600,
+          400
+        ],
+        "verdict": "check",
+        "reason": "Real paint booth, long edge 600 px",
+        "use_for": "Small gallery tile only"
+      },
+      {
+        "file": "brief/visuals/media-12.jpg",
+"src": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=nZq9bhXnt_d8Y8cQCQTIoQ&cb_client=maps_sv.tactile.gps&w=1200&h=800&yaw=292.24136&pitch=0&thumbfov=100",
+      "type": "photo",
+      "px": [
+        1024,
+        682
+      ],
+      "verdict": "skip",
+      "reason": "Street View of the industrial park, not shop work",
+        "use_for": ""
+      }
+    ],
+    "recommendation": "curated",
+    "note": "Use the tank, hood, hopper, plate, and machined-part photos. Confirm the truck-door phone before using that shot. The bridge hero and 1080p video have no source credit. 71 product images are grit and box shots. Google truck and wordmark copies match site files."
+  },
+  "shop": {
+    "detected": true,
+    "platform": "Wix Stores",
+    "total": 10,
+    "by_category": [
+      {
+        "name": "Crushed glass",
+        "count": 2,
+        "price_range": "$24.99\u2013$49.99"
+      },
+      {
+        "name": "Urea plastic",
+        "count": 2,
+        "price_range": "$35.99\u2013$124.99"
+      },
+      {
+        "name": "Aluminum oxide",
+        "count": 3,
+        "price_range": "$25.99\u2013$114.99"
+      },
+      {
+        "name": "Glass beads",
+        "count": 2,
+        "price_range": "$30.99\u2013$79.99"
+      },
+      {
+        "name": "Walnut shells",
+        "count": 1,
+        "price_range": "$49.99"
+      }
+    ],
+    "products": [
+      {
+        "name": "Tru Abrasives Crushed Glass Blast Media - 10 lbs.",
+        "path": "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1",
+        "price": "$24.99",
+        "category": "Crushed glass"
+      },
+      {
+        "name": "Urea Plastic Blast Media - 5 lbs.",
+        "path": "/product-page/urea-plastic-blast-media-5-lbs-1",
+        "price": "$35.99",
+        "category": "Urea plastic"
+      },
+      {
+        "name": "Aluminum Oxide - 8 lbs. BOX",
+        "path": "/product-page/aluminum-oxide-8-lbs-box",
+        "price": "$25.99",
+        "category": "Aluminum oxide"
+      },
+      {
+        "name": "Glass Beads Blast Media - 40 lbs.",
+        "path": "/product-page/glass-beads-blast-media-40-lbs",
+        "price": "$79.99",
+        "category": "Glass beads"
+      },
+      {
+        "name": "Aluminum Oxide Blast Media - 50 lbs.",
+        "path": "/product-page/aluminum-oxide-50-lbs",
+        "price": "$114.99",
+        "category": "Aluminum oxide"
+      },
+      {
+        "name": "Tru Abrasives Crushed Glass Blast Media - 40 lbs.",
+        "path": "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs",
+        "price": "$49.99",
+        "category": "Crushed glass"
+      },
+      {
+        "name": "Walnut Shells Blast Media - 15 lbs.",
+        "path": "/product-page/walnut-shells-blast-media-5-lbs",
+        "price": "$49.99",
+        "category": "Walnut shells"
+      },
+      {
+        "name": "Urea Plastic Blast Media - 20 lbs.",
+        "path": "/product-page/urea-plastic-blast-media-5-lbs",
+        "price": "$124.99",
+        "category": "Urea plastic"
+      },
+      {
+        "name": "Glass Beads Blast Media - 10 lbs.",
+        "path": "/product-page/glass-beads-blast-media-10-lbs",
+        "price": "$30.99",
+        "category": "Glass beads"
+      },
+      {
+        "name": "Aluminum Oxide Blast Media - 12 lbs.",
+        "path": "/product-page/aluminum-oxide-blast-media-12-lbs",
+        "price": "$34.99",
+        "category": "Aluminum oxide"
+      }
+    ]
+  },
+  "errors": []
+}
