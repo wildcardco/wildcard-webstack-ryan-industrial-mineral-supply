@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Scan Flowbite Vue so utilities generate here. Dark styles then follow .dark only. */
+@source "../../node_modules/flowbite-vue/dist";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Montserrat", Arial, sans-serif;
+  --color-ims: #1748d7;
+  --color-navy: #051137;
+  --color-ink: #1f2736;
+  --color-steel: #2b5672;
+  --color-paper: #f3f4f6;
+  --color-body: #3b3a3a;
+  --color-muted: #4b5563;
+  --color-line: #d5dde3;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url("/fonts/montserrat-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/open-sans-400.woff2") format("woff2");
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    background: #ffffff;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #1f2736;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  img,
+  picture,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    scroll-margin-top: 5rem;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid #1748d7;
+    outline-offset: 2px;
+  }
+
+  .on-navy :focus-visible {
+    outline-color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

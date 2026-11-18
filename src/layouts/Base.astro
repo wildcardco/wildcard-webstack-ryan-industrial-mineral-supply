@@ -1,0 +1,125 @@
+---
+import "../styles/global.css";
+import MobileNav from "../components/islands/MobileNav.vue";
+import { business, cta, nav } from "../data/site";
+import { Phone } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, jsonLd = [] } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: business.name,
+  telephone: business.phone,
+  email: business.email,
+  image: business.logo,
+  url: "https://www.imsblasting.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.street,
+    addressLocality: business.city,
+    addressRegion: business.region,
+    postalCode: business.postal,
+    addressCountry: "US",
+  },
+  openingHours: business.hoursSchema,
+  areaServed: ["Chicagoland", "Northwest Indiana"],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: business.rating,
+    reviewCount: business.reviewCount,
+  },
+};
+
+const scripts = [localBusiness, ...jsonLd].map((item) =>
+  JSON.stringify(item).replace(/</g, "\\u003c"),
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    {scripts.map((json) => <script type="application/ld+json" set:html={json} />)}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="border-b border-line bg-white">
+      <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-3 px-4 py-3">
+        <a href="/" class="min-w-0">
+          <img
+            src={business.logo}
+            alt="Industrial Mineral Supply"
+            width="1400"
+            height="544"
+            class="h-12 w-auto"
+          />
+        </a>
+        <MobileNav
+          client:load
+          current={path}
+          links={[...nav]}
+          ctaHref={cta.href}
+          ctaLabel={cta.label}
+        />
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="on-navy bg-ink text-white">
+      <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="font-display text-lg font-bold">{business.name}</p>
+          <p class="mt-2 text-sm text-white">{business.address}</p>
+        </div>
+        <div class="grid gap-2 text-sm">
+          <a class="inline-flex min-h-11 items-center gap-2 text-white" href={business.phoneHref}>
+            <Phone size={18} aria-hidden="true" />
+            {business.phone}
+          </a>
+          <a class="inline-flex min-h-11 items-center text-white" href={business.emailHref}>{business.email}</a>
+          <p class="text-white">{business.hours}</p>
+        </div>
+        <div class="grid gap-2 text-sm">
+          <a class="inline-flex min-h-11 items-center text-white" href={business.facebook} rel="noopener noreferrer">Facebook</a>
+          <a class="inline-flex min-h-11 items-center text-white" href={business.tiktok} rel="noopener noreferrer">TikTok</a>
+          <a class="inline-flex min-h-11 items-center text-white" href={cta.href}>{cta.label}</a>
+        </div>
+      </div>
+      <p class="border-t border-white/20 px-4 py-4 text-center text-sm text-[#8f8f8f]">
+        © 2026 Industrial Mineral Supply
+      </p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    z-index: 50;
+    transform: translateY(-200%);
+    background: #ffffff;
+    color: #1f2736;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .skip:focus {
+    transform: none;
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+/** Adapted from blocks/marketing-headers-3.html and marketing-sections-1.html */
+import { business, cta } from "../../data/site";
+---
+
+<section class="grid bg-paper lg:grid-cols-2">
+  <div class="relative aspect-[4/5] w-full overflow-hidden bg-paper lg:aspect-auto lg:min-h-[32rem]">
+    <img
+      src="/img/hero-tank.jpg"
+      alt="Vertical tank in the Griffith shop, half raw steel and half primed."
+      width="1505"
+      height="2826"
+      class="absolute inset-0 h-full w-full object-cover object-center"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="on-navy flex flex-col justify-center gap-4 bg-navy px-4 py-10 text-white sm:px-8">
+    <h1 class="font-display text-[2rem] leading-tight font-extrabold lg:text-5xl">
+      Superior quality. Unbeatable service.
+    </h1>
+    <p class="max-w-md text-white">
+      Sandblasting, glass bead, plastic media, and industrial paint from Griffith, Indiana.
+    </p>
+    <div class="flex flex-col items-start gap-3">
+      <a
+        class="inline-flex min-h-11 items-center bg-white px-5 font-semibold text-navy"
+        href={cta.href}
+      >
+        {cta.label}
+      </a>
+      <a class="inline-flex min-h-11 items-center text-white underline" href={business.phoneHref}>
+        {business.phone}
+      </a>
+    </div>
+  </div>
+</section>

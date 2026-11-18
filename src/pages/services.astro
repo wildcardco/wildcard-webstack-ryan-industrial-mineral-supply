@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import ServiceCards from "../components/blocks/ServiceCards.astro";
+import MediaTable from "../components/blocks/MediaTable.astro";
+import DeliverySteps from "../components/blocks/DeliverySteps.astro";
+import QuoteStrip from "../components/blocks/QuoteStrip.astro";
+import ServiceFAQ from "../components/islands/ServiceFAQ.vue";
+import { faqs } from "../data/site";
+
+const title = "Services | Industrial Mineral Supply | Griffith, IN";
+const description =
+  "Sandblasting, glass bead, plastic media, and industrial painting from Industrial Mineral Supply in Griffith, IN. Call (708) 895-6070 for a quote.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Base title={title} description={description} jsonLd={[faqSchema]}>
+  <section class="bg-paper">
+    <div class="mx-auto w-full max-w-6xl px-4 py-10">
+      <h1 class="font-display text-[2rem] font-extrabold text-ink">Blasting and painting</h1>
+      <p class="mt-3 max-w-xl text-body">
+        The shop blasts with the media it sells, then paints pipes, pumps, and frames.
+      </p>
+    </div>
+  </section>
+  <ServiceCards includeRetail />
+  <MediaTable />
+  <DeliverySteps />
+  <section class="bg-white">
+    <div class="mx-auto w-full max-w-6xl px-4 py-12">
+      <h2 class="font-display text-3xl font-extrabold text-ink">Questions</h2>
+      <div class="mt-6">
+        <ServiceFAQ client:load items={[...faqs]} />
+      </div>
+    </div>
+  </section>
+  <QuoteStrip />
+</Base>

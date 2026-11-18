@@ -1,0 +1,25 @@
+---
+/** Adapted from blocks/marketing-product-collections-1.html and marketing-product-cards-4.html */
+import { categories } from "../../data/site";
+---
+
+<section class="bg-white">
+  <div class="mx-auto w-full max-w-6xl px-4 py-12">
+    <h2 class="font-display text-3xl font-extrabold text-ink">Blast media</h2>
+    <p class="mt-3 text-body">
+      Crushed Glass · Urea Plastic · Aluminum Oxide · Glass Beads · Walnut Shells
+    </p>
+    <div class="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        categories.map((category) => (
+          <a href="/shop" class="flex w-full flex-col border border-line bg-white p-4 text-ink no-underline">
+            <h3 class="font-display text-xl font-bold">{category.name}</h3>
+            <p class="mt-2 text-lg font-semibold tabular-nums">{category.range}</p>
+            <p class="mt-2 text-muted">{category.note}</p>
+          </a>
+        ))
+      }
+    </div>
+    <p class="mt-4 text-muted">Free shipping to the continental U.S. Alaska, Hawaii, and international orders may cost extra.</p>
+  </div>
+</section>

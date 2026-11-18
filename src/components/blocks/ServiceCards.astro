@@ -1,0 +1,41 @@
+---
+/** Adapted from blocks/marketing-feature-grids-1.html and marketing-cards-5.html */
+import { CircleDot, Paintbrush, Plane, Truck, Wind, ShoppingBag } from "@lucide/astro";
+import { retailService, services } from "../../data/site";
+
+interface Props {
+  includeRetail?: boolean;
+}
+
+const { includeRetail = false } = Astro.props;
+const icons = { wind: Wind, bead: CircleDot, plane: Plane, paint: Paintbrush, truck: Truck };
+---
+
+<section class="bg-white">
+  <div class="mx-auto w-full max-w-6xl px-4 py-12">
+    <h2 class="font-display text-3xl font-extrabold text-ink">Services</h2>
+    <div class="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => {
+          const Icon = icons[service.icon];
+          return (
+            <article class="w-full border border-line bg-white p-4">
+              <Icon size={28} class="text-ims" aria-hidden="true" />
+              <h3 class="mt-3 font-display text-xl font-bold text-ink">{service.title}</h3>
+              <p class="mt-2 text-body">{service.text}</p>
+            </article>
+          );
+        })
+      }
+      {
+        includeRetail && (
+          <article class="w-full border border-line bg-white p-4">
+            <ShoppingBag size={28} class="text-ims" aria-hidden="true" />
+            <h3 class="mt-3 font-display text-xl font-bold text-ink">{retailService.title}</h3>
+            <p class="mt-2 text-body">{retailService.text}</p>
+          </article>
+        )
+      }
+    </div>
+  </div>
+</section>

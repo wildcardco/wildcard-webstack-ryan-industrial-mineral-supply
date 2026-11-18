@@ -1,0 +1,25 @@
+{
+  "name": "wildcard-webstack-astro-template",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build --timings > build-timings.txt 2>&1; s=$?; cat build-timings.txt; exit $s",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/vue": "7.1.4",
+    "@lucide/astro": "^1.75.0",
+    "@tailwindcss/vite": "4.3.5",
+    "astro": "7.4.10",
+    "flowbite-vue": "^0.4.0",
+    "lucide-vue-next": "^1.0.0",
+    "tailwindcss": "4.3.5",
+    "vue": "3.5.45"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1"
+  }
+}

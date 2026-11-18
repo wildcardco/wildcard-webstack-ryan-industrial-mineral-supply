@@ -1,0 +1,15 @@
+---
+description: Wild Card presentation rules for this client site
+alwaysApply: true
+---
+
+# Wild Card
+
+- Use real client photos only. No stock photos, no illustrations, no unDraw.
+- No walls of text. Paragraphs are 35 words or fewer. Lists of 3 or more items become cards, chips, icons, or a table.
+- One hero headline of 8 words or fewer, with one primary call to action.
+- Home uses at least 3 different layout types.
+- Mobile navigation works: hidden until the menu button opens it, and links are tappable.
+- Target Baseline Widely available. Anchor positioning only with a position fallback.
+- Never show stock or availability badges, or fact-check notes, on the page.
+- Keep live URLs and paths.

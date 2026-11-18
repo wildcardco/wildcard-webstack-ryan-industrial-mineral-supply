@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/blocks/Hero.astro";
+import StatBand from "../components/blocks/StatBand.astro";
+import ServiceCards from "../components/blocks/ServiceCards.astro";
+import BeforeAfterBand from "../components/blocks/BeforeAfterBand.astro";
+import CategoryRow from "../components/blocks/CategoryRow.astro";
+import DeliverySteps from "../components/blocks/DeliverySteps.astro";
+import GalleryBand from "../components/blocks/GalleryBand.astro";
+import QuoteStrip from "../components/blocks/QuoteStrip.astro";
+
+const title = "Home | Industrial Mineral Supply | Griffith, IN";
+const description =
+  "Sandblasting and blast media from Industrial Mineral Supply in Griffith, IN. Call (708) 895-6070 for a quote.";
+---
+
+<Base title={title} description={description}>
+  <Hero />
+  <StatBand />
+  <ServiceCards />
+  <BeforeAfterBand />
+  <CategoryRow />
+  <DeliverySteps />
+  <GalleryBand />
+  <QuoteStrip />
+</Base>

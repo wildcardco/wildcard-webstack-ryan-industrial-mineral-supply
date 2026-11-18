@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import ShippingStrip from "../components/blocks/ShippingStrip.astro";
+import ShopCategoryTabs from "../components/islands/ShopCategoryTabs.vue";
+import { categories, products } from "../data/site";
+
+const title = "Buy Abrasives | Industrial Mineral Supply | Griffith, IN";
+const description =
+  "Blast media from Industrial Mineral Supply in Griffith, IN. Call (708) 895-6070 for a quote.";
+---
+
+<Base title={title} description={description}>
+  <ShippingStrip />
+  <section class="bg-white">
+    <div class="mx-auto w-full max-w-6xl px-4 py-8">
+      <ShopCategoryTabs
+        client:load
+        products={products.map((item) => ({
+          name: item.name,
+          path: item.path,
+          price: item.price,
+          category: item.category,
+          image: item.image,
+        }))}
+        categories={categories.map((item) => item.name)}
+      />
+    </div>
+  </section>
+</Base>

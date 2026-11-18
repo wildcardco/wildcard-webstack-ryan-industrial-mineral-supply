@@ -1,0 +1,29 @@
+---
+/** Adapted from blocks/marketing-sections-3.html */
+import BeforeAfter from "../islands/BeforeAfter.vue";
+
+const chips = ["Weld tint comes off", "Threads stay put", "Even steel finish"];
+---
+
+<section class="bg-paper">
+  <div class="mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-12 lg:grid-cols-2">
+    <BeforeAfter
+      client:load
+      before="/img/plate-before.jpg"
+      after="/img/plate-after.jpg"
+      beforeAlt="Stainless plate before blasting, with weld discoloration around the threads."
+      afterAlt="The same stainless plate after blasting, with an even finish."
+    />
+    <div>
+      <h2 class="font-display text-3xl font-extrabold text-ink">Before and after</h2>
+      <p class="mt-3 text-body">Drag the control across a stainless plate from the shop.</p>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {
+          chips.map((chip) => (
+            <li class="bg-white px-3 py-2 text-sm font-semibold text-ink">{chip}</li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

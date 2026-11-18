@@ -1,0 +1,17 @@
+---
+/** Adapted from blocks/marketing-ctas-1.html */
+import { business, cta } from "../../data/site";
+---
+
+<section class="on-navy bg-navy text-white">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-10 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h2 class="font-display text-3xl font-extrabold">Get a quote</h2>
+      <p class="mt-2 text-white">{business.phone}</p>
+      <p class="text-white">{business.hours}</p>
+    </div>
+    <a class="inline-flex min-h-11 items-center justify-center bg-white px-5 font-semibold text-navy" href={cta.href}>
+      {cta.label}
+    </a>
+  </div>
+</section>

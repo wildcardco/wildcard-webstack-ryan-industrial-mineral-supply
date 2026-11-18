@@ -1,0 +1,67 @@
+---
+import Base from "../layouts/Base.astro";
+import QuoteForm from "../components/islands/QuoteForm.vue";
+import { business, quoteSubjects } from "../data/site";
+import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
+
+const title = "Contact | Industrial Mineral Supply | Griffith, IN";
+const description =
+  "Request a quote from Industrial Mineral Supply in Griffith, IN. Call (708) 895-6070.";
+
+const cards = [
+  { label: "Phone", text: business.phone, href: business.phoneHref, icon: Phone },
+  { label: "Email", text: business.email, href: business.emailHref, icon: Mail },
+  { label: "Address", text: business.address, href: "", icon: MapPin },
+  { label: "Hours", text: business.hours, href: "", icon: Clock },
+];
+
+const mapSrc =
+  "https://maps.google.com/maps?q=1944%20N.%20Griffith%20Blvd.%20Suite%20C%2C%20Griffith%2C%20IN%2046319&z=15&output=embed";
+---
+
+<Base title={title} description={description}>
+  <section id="quote" class="bg-paper">
+    <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 lg:grid-cols-2">
+      <div>
+        <h1 class="font-display text-[2rem] font-extrabold text-ink">Get a quote</h1>
+        <p class="mt-3 text-body">Name, email, subject, and a short note. Same fields as the shop form.</p>
+        <div class="mt-6 bg-white p-4">
+          <QuoteForm client:load subjects={[...quoteSubjects]} email={business.email} />
+        </div>
+      </div>
+      <div class="grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+        {
+          cards.map((card) => (
+            <article class="w-full bg-white p-4">
+              <h2 class="flex items-center gap-2 font-display text-lg font-bold text-ink">
+                <card.icon size={20} class="text-ims" aria-hidden="true" />
+                {card.label}
+              </h2>
+              {card.href ? (
+                <a class="mt-2 inline-flex min-h-11 items-center text-ink" href={card.href}>
+                  {card.text}
+                </a>
+              ) : (
+                <p class="mt-2 text-body">{card.text}</p>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="bg-white">
+    <div class="mx-auto w-full max-w-6xl px-4 py-8">
+      <h2 class="font-display text-2xl font-bold text-ink">Map</h2>
+      <div class="relative mt-4 aspect-[4/3] w-full overflow-hidden border border-line">
+        <iframe
+          class="absolute inset-0 h-full w-full"
+          title="Map of Industrial Mineral Supply, 1944 N. Griffith Blvd. Suite C, Griffith, IN"
+          src={mapSrc}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</Base>
