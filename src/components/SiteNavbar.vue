@@ -12,7 +12,10 @@ const path = computed(() => {
 });
 
 function isActive(href: string) {
-  if (href === '/shop') return path.value === '/shop' || path.value.startsWith('/shop/');
+  if (href === '/shop') {
+    const current = path.value.replace(/\/$/, '') || '/';
+    return current === '/shop' || current.startsWith('/product-page/');
+  }
   return path.value === href;
 }
 

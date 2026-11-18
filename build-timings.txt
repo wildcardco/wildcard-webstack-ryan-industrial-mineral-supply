@@ -1,87 +1,87 @@
-13:31:20 [types] Generated 55ms
-13:31:20 [build] output: "static"
-13:31:20 [build] mode: "static"
-13:31:20 [build] directory: /agent/repos/wildcard-webstack-ryan-industrial-mineral-supply/dist/
-13:31:20 [build] Collecting build info...
-13:31:20 [build] ✓ Completed in 153ms.
-13:31:20 [build] Building static entrypoints...
-13:31:20 [vite] ✓ built in 317ms
-13:31:21 [vite] ✓ built in 152ms
-13:31:21 [build] Rearranging server assets...
+13:38:15 [types] Generated 39ms
+13:38:15 [build] output: "static"
+13:38:15 [build] mode: "static"
+13:38:15 [build] directory: /agent/repos/wildcard-webstack-ryan-industrial-mineral-supply/dist/
+13:38:15 [build] Collecting build info...
+13:38:15 [build] ✓ Completed in 133ms.
+13:38:15 [build] Building static entrypoints...
+13:38:15 [vite] ✓ built in 286ms
+13:38:15 [vite] ✓ built in 147ms
+13:38:15 [build] Rearranging server assets...
 
  generating static routes 
-13:31:21   ├─ /about/index.html (+18ms) 
-13:31:21   ├─ /contact/index.html (+4ms) 
-13:31:21   ├─ /gallery/index.html (+4ms) 
-13:31:21   ├─ /services/index.html (+11ms) 
-13:31:21   ├─ /shop/tru-abrasives-crushed-glass-blast-media-10-lbs-1/index.html (+5ms) 
-13:31:21   ├─ /shop/urea-plastic-blast-media-5-lbs-1/index.html (+3ms) 
-13:31:21   ├─ /shop/aluminum-oxide-8-lbs-box/index.html (+2ms) 
-13:31:21   ├─ /shop/glass-beads-blast-media-40-lbs/index.html (+3ms) 
-13:31:21   ├─ /shop/aluminum-oxide-50-lbs/index.html (+3ms) 
-13:31:21   ├─ /shop/tru-abrasives-crushed-glass-blast-media-10-lbs/index.html (+2ms) 
-13:31:21   ├─ /shop/walnut-shells-blast-media-5-lbs/index.html (+2ms) 
-13:31:21   ├─ /shop/urea-plastic-blast-media-5-lbs/index.html (+2ms) 
-13:31:21   ├─ /shop/glass-beads-blast-media-10-lbs/index.html (+2ms) 
-13:31:21   ├─ /shop/aluminum-oxide-blast-media-12-lbs/index.html (+2ms) 
-13:31:21   ├─ /shop/index.html (+3ms) 
-13:31:21   ├─ /index.html (+4ms) 
-13:31:21 ✓ Completed in 92ms.
+13:38:15   ├─ /about/index.html (+18ms) 
+13:38:15   ├─ /contact/index.html (+4ms) 
+13:38:15   ├─ /gallery/index.html (+4ms) 
+13:38:15   ├─ /product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1/index.html (+9ms) 
+13:38:15   ├─ /product-page/urea-plastic-blast-media-5-lbs-1/index.html (+4ms) 
+13:38:15   ├─ /product-page/aluminum-oxide-8-lbs-box/index.html (+2ms) 
+13:38:15   ├─ /product-page/glass-beads-blast-media-40-lbs/index.html (+3ms) 
+13:38:15   ├─ /product-page/aluminum-oxide-50-lbs/index.html (+3ms) 
+13:38:15   ├─ /product-page/tru-abrasives-crushed-glass-blast-media-10-lbs/index.html (+3ms) 
+13:38:15   ├─ /product-page/walnut-shells-blast-media-5-lbs/index.html (+3ms) 
+13:38:15   ├─ /product-page/urea-plastic-blast-media-5-lbs/index.html (+2ms) 
+13:38:15   ├─ /product-page/glass-beads-blast-media-10-lbs/index.html (+2ms) 
+13:38:15   ├─ /product-page/aluminum-oxide-blast-media-12-lbs/index.html (+2ms) 
+13:38:15   ├─ /services/index.html (+5ms) 
+13:38:15   ├─ /shop/index.html (+4ms) 
+13:38:15   ├─ /index.html (+4ms) 
+13:38:15 ✓ Completed in 95ms.
 
-13:31:21 [build] ✓ Completed in 632ms.
-13:31:21 [build] 16 page(s) built in 791ms
-13:31:21 [build] Complete!
+13:38:15 [build] ✓ Completed in 591ms.
+13:38:15 [build] 16 page(s) built in 728ms
+13:38:15 [build] Complete!
 
  build timings 
-total 891ms · 16 pages · output "static"
+total 825ms · 16 pages · output "static"
 
 Build phases
-  resolve config                        90ms  10.1% ██▂···················
-  setup                                153ms  17.2% ··▅███▂···············
-    route discovery                      5ms   0.5% ····▁·················
-    vite config                         24ms   2.6% ····▅·················
-    content sync                        55ms   6.2% ····▂█▂···············
-  prerender bundle                     318ms  35.7% ·······▆███████▂······
-  client bundle                        153ms  17.1% ···············▇███···
-  manifest injection                     6ms   0.7% ···················▂··
-  generate pages                        93ms  10.4% ···················▃██
-    prerenderer setup                   11ms   1.3% ···················▃··
-    static paths                        12ms   1.3% ···················▁▃·
+  resolve config                        88ms  10.6% ██▃···················
+  setup                                133ms  16.1% ··▄███▁···············
+    route discovery                      5ms   0.6% ····▂·················
+    vite config                         22ms   2.7% ····▅▁················
+    content sync                        39ms   4.8% ·····█▁···············
+  prerender bundle                     288ms  34.9% ·······███████▇·······
+  client bundle                        148ms  17.9% ··············▂███▇···
+  manifest injection                     5ms   0.6% ···················▂··
+  generate pages                        95ms  11.5% ···················▅██
+    prerenderer setup                   11ms   1.4% ···················▃··
+    static paths                        12ms   1.4% ···················▃▁·
 
-Vite plugins (182ms of the build)
-  vite:vue                              68ms        ··········▇▄···▃▁·····  26 calls · transform 68ms
-  @tailwindcss/vite:generate:build      66ms        ···········▃█▃········  1 call · transform 66ms
-  astro:build                            8ms        ·········▁▁···········  12 calls · transform 8ms
-  astro:session-provider                 5ms        ········▁▁············  693 calls · resolveId 5ms
-  vite:css-post                          5ms        ··············▁·······  27 calls · renderChunk 4ms
-  astro:head-metadata-build              5ms        ··············▁·······  1 call · generateBundle 5ms
-  astro:routes                           4ms        ········▁▁▁···········  223 calls · transform 4ms
+Vite plugins (167ms of the build)
+  @tailwindcss/vite:generate:build      63ms        ···········▇▇·········  1 call · transform 63ms
+  vite:vue                              63ms        ·········▃█▁···▃······  26 calls · transform 62ms
+  astro:build                            8ms        ·········▂·▁··········  12 calls · transform 8ms
+  astro:head-metadata-build              4ms        ··············▁·······  1 call · generateBundle 4ms
+  vite:css-post                          4ms        ·············▁▁·······  27 calls · renderChunk 4ms
+  astro:session-provider                 4ms        ········▁▁············  693 calls · resolveId 4ms
+  astro:routes                           4ms        ········▁▁············  223 calls · transform 4ms
   astro:markdown                         4ms        ········▁▁············  682 calls · resolveId 4ms
 
-Slowest files to bundle (152ms in load/transform)
-  src/styles/global.css                 67ms        ···········▃█▃········  @tailwindcss/vite:generate:build 66ms · vite:css 1ms
-  src/components/GalleryLightbox.vue    31ms        ··········▆····▁······  vite:vue 31ms
-  src/components/ServicesTabs.vue       17ms        ··········▂▁···▂······  vite:vue 17ms
-  src/components/SiteNavbar.vue          8ms        ···········▁···▁▁·····  vite:vue 8ms
-  …mponents/ProductInfoAccordion.vue     5ms        ···········▁···▁······  vite:vue 5ms
-  src/pages/about.astro                  3ms        ·········▁············  astro:build 3ms
-  src/components/ProductCards.vue        2ms        ···········▁··········  vite:vue 2ms
-  src/components/ServiceCards.vue        2ms        ···········▁··········  vite:vue 2ms
+Slowest files to bundle (138ms in load/transform)
+  src/styles/global.css                 64ms        ···········▇▇·········  @tailwindcss/vite:generate:build 63ms · vite:css 1ms
+  src/components/GalleryLightbox.vue    29ms        ·········▃▄····▁······  vite:vue 29ms
+  src/components/ServicesTabs.vue       14ms        ··········▃····▁······  vite:vue 14ms
+  src/components/SiteNavbar.vue          7ms        ···········▁···▁······  vite:vue 7ms
+  …mponents/ProductInfoAccordion.vue     5ms        ··········▁····▁······  vite:vue 5ms
+  …c/pages/product-page/[slug].astro     4ms        ·········▁············  astro:build 4ms
+  src/components/ServiceCards.vue        3ms        ··········▁···········  vite:vue 3ms
+  src/components/ProductCards.vue        2ms        ··········▁···········  vite:vue 2ms
 
-Page rendering (68ms across 16 pages)
-  component render                      52ms   5.8% ····················▆▆
-  page pipeline                         16ms   1.8%
+Page rendering (71ms across 16 pages)
+  component render                      50ms   6.1% ····················▆▅
+  page pipeline                         20ms   2.5%
 
-Slowest pages (median 3ms · p95 18ms)
+Slowest pages (median 4ms · p95 18ms)
   /about                                18ms
-  /services                             11ms
-  …rushed-glass-blast-media-10-lbs-1     5ms         /shop/[slug]
-  /contact                               4ms
-  /gallery                               4ms
+  …rushed-glass-blast-media-10-lbs-1     9ms         /product-page/[slug]
+  /services                              5ms
   /                                      4ms
-  /shop                                  3ms
-  /shop/aluminum-oxide-50-lbs            3ms         /shop/[slug]
+  /contact                               4ms
+  /shop                                  4ms
+  /gallery                               4ms
+  …/urea-plastic-blast-media-5-lbs-1     4ms         /product-page/[slug]
 
-Integrations (63ms in hooks)
-  @astrojs/vue                          63ms   7.1% ··▄█▂·················  astro:config:setup 63ms
+Integrations (61ms in hooks)
+  @astrojs/vue                          61ms   7.4% ··▃█▃·················  astro:config:setup 61ms
 

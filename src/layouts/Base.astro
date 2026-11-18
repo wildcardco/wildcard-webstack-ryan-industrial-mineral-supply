@@ -9,6 +9,7 @@ const {
 } = Astro.props;
 
 const path = Astro.url.pathname;
+const canonicalPath = path === '/' ? '/' : path.replace(/\/$/, '');
 ---
 <!doctype html>
 <html lang="en" style="color-scheme: light">
@@ -17,6 +18,7 @@ const path = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalPath} />
     <title>{title}</title>
     <link rel="icon" href="/img/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

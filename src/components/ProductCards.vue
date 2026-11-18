@@ -6,7 +6,7 @@ import { products } from '../data/site';
 <template>
   <ul class="product-grid">
     <li v-for="product in products" :key="product.slug">
-      <a class="product-card" :href="`/shop/${product.slug}`">
+      <a class="product-card" :href="`/product-page/${product.slug}`">
         <span class="product-card__media">
           <img :src="product.image" :alt="product.imageAlt" width="800" height="600" />
         </span>
