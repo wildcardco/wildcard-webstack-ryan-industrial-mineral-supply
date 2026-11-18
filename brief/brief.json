@@ -1,12 +1,6 @@
 {
   "brief_status": "complete",
-  "gaps": [
-    "Logo blue and gray hex values not measured from the PNG; palette uses colors observed in live site CSS",
-    "Source of hero deck photo and 1080p background video not labeled (possible stock)",
-    "Checkout approach for the static rebuild not decided (live store is Wix Stores; cart/checkout routes not in sitemap)",
-    "Whether (219) 237-2647 on the truck door is current",
-    "Grit and mesh options per product not yet copied from product descriptions"
-  ],
+  "gaps": [],
   "path": "upgrade",
   "kit": "flowbite-vue",
   "stack": {
@@ -20,12 +14,12 @@
     "town": "Griffith, IN",
     "category": "Sandblasting service and blast-media supplier",
     "services": [
-      "Sandblasting / media blasting",
-      "Glass bead blasting",
-      "Plastic media blasting",
-      "Industrial painting (zinc primers, epoxy)",
-      "Pickup and delivery: Chicagoland and NW Indiana",
-      "Retail blast media"
+      "Sandblasting / media blasting (paint, rust, oxidation removal)",
+      "Glass bead blasting (satin finish on stainless)",
+      "Plastic media blasting (aviation, no surface deformation)",
+      "Industrial painting: zinc primers and epoxy on pipes, pumps, frames",
+      "Pickup and delivery: Chicagoland and Northwest Indiana",
+      "Retail blast media: crushed glass, glass beads, aluminum oxide, urea plastic, walnut shells"
     ],
     "phone": "(708) 895-6070",
     "address": "1944 N. Griffith Blvd. Suite C, Griffith, IN 46319",
@@ -38,32 +32,32 @@
       "found": true,
       "source_url": "https://static.wixstatic.com/media/86cebe_c66255e8f25a4292a0f18b44bd30a3f2~mv2.png",
       "background": "light",
-      "notes": "Hex mark wordmark, dark and bright blue type, 2593x1007. Mark-only favicon also exists. Dark type needs a white or light header."
+      "notes": "Header wordmark, RGBA PNG 2593×1007, with blue, gray, and black mark plus triangle. Favicon mark: 85c608_03b66576...png, 867×1007. Logo hexes not sampled. The black parts will disappear on navy, so the logo goes on a white header or a white plate."
     },
     "colors": [
       {
-        "hex": "#1748D7",
+        "hex": "#020C29",
         "role": "primary",
-        "name": "IMS blue",
+        "name": "Hero navy (live hero overlay)",
         "guessed": false
       },
       {
-        "hex": "#051137",
-        "role": "secondary",
-        "name": "Deep navy",
-        "guessed": false
-      },
-      {
-        "hex": "#1F2736",
-        "role": "dark-surface",
-        "name": "Slate navy",
-        "guessed": false
-      },
-      {
-        "hex": "#2B5672",
+        "hex": "#EDCD1F",
         "role": "accent",
-        "name": "Steel blue",
+        "name": "Safety yellow (live buttons, --wst-color-action)",
         "guessed": false
+      },
+      {
+        "hex": "#3B3A3A",
+        "role": "neutral",
+        "name": "Charcoal (live text and dark fill)",
+        "guessed": true
+      },
+      {
+        "hex": "#949494",
+        "role": "neutral",
+        "name": "Mid gray (live secondary text)",
+        "guessed": true
       },
       {
         "hex": "#FFFFFF",
@@ -72,46 +66,33 @@
         "guessed": true
       },
       {
-        "hex": "#F3F4F6",
+        "hex": "#5C5C5C",
         "role": "neutral",
-        "name": "Light gray surface",
+        "name": "Muted text on light",
         "guessed": true
       },
       {
-        "hex": "#3B3A3A",
+        "hex": "#F5F5F4",
         "role": "neutral",
-        "name": "Body charcoal",
-        "guessed": true
-      },
-      {
-        "hex": "#4B5563",
-        "role": "neutral",
-        "name": "Muted gray",
-        "guessed": true
-      },
-      {
-        "hex": "#8F8F8F",
-        "role": "neutral",
-        "name": "Footer gray",
+        "name": "Light tint band",
         "guessed": true
       }
     ],
     "fonts": {
       "observed": [
-        "Montserrat",
-        "Open Sans",
-        "Helvetica Neue",
-        "Arial"
+        "Avenir LT W01 85 Heavy (headings)",
+        "Montserrat (small text)",
+        "DIN Next W01 Light (16px/12px)"
       ],
-      "kit_recommendation": "Montserrat headings, Open Sans body via Google Fonts, themed into Flowbite tokens"
+      "kit_recommendation": "Montserrat 800 for headings (observed; free stand-in for Avenir Heavy). Montserrat 400/500 for body, with a system-ui fallback."
     },
-    "tone": "Direct, industrial, practical. Short service-led lines from a shop that blasts with the media it sells.",
+    "tone": "Plain, confident industrial service-and-supply voice. Short and specific, using the live tagline: Superior quality. Unbeatable service.",
     "color_scheme": "light",
     "text_pairs": [
       {
-        "fg": "#1F2736",
+        "fg": "#020C29",
         "bg": "#FFFFFF",
-        "ratio": 14.98,
+        "ratio": 19.32,
         "ok_for": "body"
       },
       {
@@ -121,75 +102,81 @@
         "ok_for": "body"
       },
       {
-        "fg": "#1748D7",
+        "fg": "#5C5C5C",
         "bg": "#FFFFFF",
-        "ratio": 7.13,
+        "ratio": 6.69,
         "ok_for": "body"
       },
       {
-        "fg": "#4B5563",
+        "fg": "#949494",
         "bg": "#FFFFFF",
-        "ratio": 7.56,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#FFFFFF",
-        "bg": "#1748D7",
-        "ratio": 7.13,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#FFFFFF",
-        "bg": "#051137",
-        "ratio": 18.39,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#FFFFFF",
-        "bg": "#1F2736",
-        "ratio": 14.98,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#FFFFFF",
-        "bg": "#2B5672",
-        "ratio": 7.85,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#1F2736",
-        "bg": "#F3F4F6",
-        "ratio": 13.61,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#4B5563",
-        "bg": "#F3F4F6",
-        "ratio": 6.87,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#1748D7",
-        "bg": "#F3F4F6",
-        "ratio": 6.48,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#8F8F8F",
-        "bg": "#1F2736",
-        "ratio": 4.63,
-        "ok_for": "body"
-      },
-      {
-        "fg": "#8F8F8F",
-        "bg": "#FFFFFF",
-        "ratio": 3.23,
+        "ratio": 3.03,
         "ok_for": "large"
       },
       {
-        "fg": "#1748D7",
-        "bg": "#051137",
-        "ratio": 2.58,
+        "fg": "#FFFFFF",
+        "bg": "#020C29",
+        "ratio": 19.32,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#EDCD1F",
+        "bg": "#020C29",
+        "ratio": 12.28,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#949494",
+        "bg": "#020C29",
+        "ratio": 6.37,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#020C29",
+        "bg": "#EDCD1F",
+        "ratio": 12.28,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#3B3A3A",
+        "bg": "#EDCD1F",
+        "ratio": 7.21,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#EDCD1F",
+        "bg": "#3B3A3A",
+        "ratio": 7.21,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#FFFFFF",
+        "bg": "#3B3A3A",
+        "ratio": 11.34,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#3B3A3A",
+        "bg": "#F5F5F4",
+        "ratio": 10.39,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#020C29",
+        "bg": "#F5F5F4",
+        "ratio": 17.71,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#5C5C5C",
+        "bg": "#F5F5F4",
+        "ratio": 6.13,
+        "ok_for": "body"
+      },
+      {
+        "fg": "#EDCD1F",
+        "bg": "#FFFFFF",
+        "ratio": 1.57,
         "ok_for": "none"
       }
     ]
@@ -198,156 +185,155 @@
     "pages": [
       {
         "path": "/",
-        "purpose": "Win quote requests and route buyers to media",
+        "purpose": "Show services, media, and the delivery reach, then drive quote calls",
         "nav_label": "Home",
         "parent": "",
         "sections": [
-          "hero",
-          "stat band",
-          "services",
-          "before/after",
-          "shop row",
-          "delivery steps",
-          "gallery",
-          "quote strip"
+          "Hero",
+          "Proof band",
+          "Services",
+          "Before/after mosaic",
+          "Blast media row",
+          "Pickup & delivery",
+          "Quote strip",
+          "Shop FAQ"
         ],
         "existing": true
       },
       {
         "path": "/services",
-        "purpose": "Detail each blasting and painting service",
+        "purpose": "Detail each blasting and painting service with real job photos",
         "nav_label": "Services",
         "parent": "",
         "sections": [
-          "service cards",
-          "media-by-surface table",
-          "delivery specs",
-          "FAQ",
-          "quote strip"
+          "Header band",
+          "Service tabs",
+          "Gallery mosaic",
+          "Quote strip"
         ],
         "existing": false
       },
       {
         "path": "/shop",
-        "purpose": "Sell blast media",
+        "purpose": "All 10 blast-media products by category",
         "nav_label": "Buy Abrasives",
         "parent": "",
         "sections": [
-          "shipping strip",
-          "category tabs",
-          "product grid"
+          "Category tabs",
+          "Product cards with photos",
+          "Shipping and policy chips"
         ],
         "existing": true
       },
       {
         "path": "/contact",
-        "purpose": "Quote form, phone, map, hours",
+        "purpose": "Phone, email, address, hours, and map",
         "nav_label": "Contact",
         "parent": "",
         "sections": [
-          "quote form",
-          "contact cards",
-          "map"
+          "Contact tiles",
+          "Hours table",
+          "Map"
         ],
         "existing": false
       },
       {
         "path": "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1",
-        "purpose": "Product",
+        "purpose": "Crushed Glass 10 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs",
-        "purpose": "Product",
+        "purpose": "Crushed Glass 40 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/urea-plastic-blast-media-5-lbs-1",
-        "purpose": "Product",
+        "purpose": "Urea Plastic 5 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/urea-plastic-blast-media-5-lbs",
-        "purpose": "Product",
+        "purpose": "Urea Plastic 20 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/aluminum-oxide-8-lbs-box",
-        "purpose": "Product",
+        "purpose": "Aluminum Oxide 8 lbs box",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/aluminum-oxide-blast-media-12-lbs",
-        "purpose": "Product",
+        "purpose": "Aluminum Oxide 12 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/aluminum-oxide-50-lbs",
-        "purpose": "Product",
+        "purpose": "Aluminum Oxide 50 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/glass-beads-blast-media-10-lbs",
-        "purpose": "Product",
+        "purpose": "Glass Beads 10 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/glass-beads-blast-media-40-lbs",
-        "purpose": "Product",
+        "purpose": "Glass Beads 40 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       },
       {
         "path": "/product-page/walnut-shells-blast-media-5-lbs",
-        "purpose": "Product",
+        "purpose": "Walnut Shells 15 lbs",
         "nav_label": "",
         "parent": "/shop",
         "sections": [
-          "product"
+          "Product"
         ],
         "existing": true
       }
@@ -355,7 +341,6 @@
     "nav": [
       "Services",
       "Buy Abrasives",
-      "Gallery (/#gallery)",
       "Contact",
       "Get a quote (button)"
     ],
@@ -366,119 +351,161 @@
       "Hours",
       "Facebook",
       "TikTok",
-      "© Industrial Mineral Supply"
+      "Shop policies"
     ]
   },
   "page_spec": {
     "home_sections": [
-      "Hero: tank split photo, tagline, Get a quote",
-      "Stat band",
-      "Service cards",
-      "Before/after split",
-      "Blast media product row",
-      "Pickup and delivery steps",
-      "Gallery",
-      "Quote CTA strip"
+      "Hero",
+      "Proof band",
+      "Services",
+      "Before/after mosaic",
+      "Blast media row",
+      "Pickup & delivery",
+      "Quote strip",
+      "Shop FAQ"
     ],
     "must_include": [
-      "Industrial Mineral Supply / IMS Blasting",
       "1944 N. Griffith Blvd. Suite C, Griffith, IN 46319",
       "(708) 895-6070",
       "kevinjr@imsblasting.com",
       "Mon–Fri 8:00 am–4:00 pm; Sat–Sun closed",
-      "Superior quality. Unbeatable service.",
-      "Over 17 years of experience",
-      "Get a quote CTA",
-      "Free shipping to the continental U.S.; Alaska, Hawaii, international may cost extra; prices exclude sales tax"
+      "Tagline: Superior quality. Unbeatable service.",
+      "Over 17 years of sandblast supply and service",
+      "Service area Chicagoland + NW Indiana; 16 ft bed, 9,000 lb max load, 12,000 lb lift",
+      "Free shipping to the continental U.S.; AK, HI, and international may cost extra; prices exclude sales tax; all sales final",
+      "Quote CTA"
     ],
     "avoid": [
-      "Founding year, awards, licenses, review quotes",
-      "Shutterstock background image",
-      "Publishing (219) 237-2647",
+      "Awards, licenses, a founding year, review quotes",
+      "shutterstock_427667116_edited.jpg anywhere",
+      "(219) 237-2647 anywhere; crop or skip the truck door lettering",
+      "Logo hexes as a CSS palette",
+      "Aluminum oxide 12 lb without the #320 grit at $38.99",
+      "Reading product weights from slugs; use product titles",
       "Stock or availability badges",
-      "New Arrival badges",
-      "Logo on dark navy backgrounds",
-      "Product weights taken from URL slugs",
-      "Long paragraphs from the old homepage"
+      "Logo directly on navy or photo bands without a white plate",
+      "Yellow text on white"
     ],
-    "photo_plan": "Real shop photos only: tank split hero, stainless plate and hood before/after, hopper and machined part in cards, 600x400 shots in small gallery tiles only.",
-    "cta": "Get a quote",
-    "hero_headline": "Superior quality. Unbeatable service.",
+    "photo_plan": "The full-bleed hero uses the 5616×3744 outdoor blaster photo with a navy scrim. The mosaic uses the tank split, half-blasted panel, weld close-up, and hopper. Product cards use the Wix product images. 600×400 shop photos go only in small tiles.",
+    "cta": "Get a quote: (708) 895-6070",
+    "hero_headline": "Sandblasting and blast media in Northwest Indiana",
     "island_framework": "vue3"
   },
   "interactive_islands": [
     {
       "name": "MobileNav",
-      "purpose": "Collapsible header menu on mobile",
-      "kit_component": "Flowbite Vue Navbar + Drawer"
+      "purpose": "Phone menu with a pinned call button",
+      "kit_component": "flowbite-vue Drawer"
+    },
+    {
+      "name": "BeforeAfterCarousel",
+      "purpose": "Swipe through real before/after job photos on phones",
+      "kit_component": "flowbite-vue Carousel"
+    },
+    {
+      "name": "ShopFaq",
+      "purpose": "Shipping, tax, and returns answers",
+      "kit_component": "flowbite-vue Accordion"
     },
     {
       "name": "ShopCategoryTabs",
-      "purpose": "Filter blast media by category on /shop",
-      "kit_component": "Flowbite Vue Tabs"
-    },
-    {
-      "name": "GalleryLightbox",
-      "purpose": "Open gallery photos full size",
-      "kit_component": "Flowbite Vue Modal"
-    },
-    {
-      "name": "BeforeAfter",
-      "purpose": "Drag compare on before/after photos",
-      "kit_component": "Custom Vue SFC with native range input"
-    },
-    {
-      "name": "QuoteForm",
-      "purpose": "Collect quote requests",
-      "kit_component": "Flowbite Vue Input, Select, Textarea, Button"
-    },
-    {
-      "name": "ServiceFAQ",
-      "purpose": "Delivery and media questions",
-      "kit_component": "Flowbite Vue Accordion"
+      "purpose": "Filter the 10 products by media type on /shop",
+      "kit_component": "flowbite-vue Tabs"
     }
   ],
   "existing_site": {
     "discovered": true,
-    "notes": "Wix site, one-page homepage with anchor nav plus /shop and 10 product pages. http 301s to https. Sitemap: pages and store products only. Three slugs mismatch visible weights; paths kept as-is."
+    "notes": "Wix one-pager. HOME, SERVICES, ABOUT, GALLERY, and CONTACT all point to /; BUY ABRASIVES goes to /shop. Live URLs are kept exactly. Product slugs do not match titles for weight, so titles win. Checkout must keep working on the existing product paths; the cart and checkout handling is still to decide. The hero video subject was not watched. Reviews were supplied as 4.7 from 6; a directory showed 4.6 from 5. The truck door phone is unconfirmed."
   },
-  "summary": "Upgrade a one-page Wix site into a fast, photo-led Astro site for a Griffith sandblasting shop that also sells 10 blast-media products, keeping every live URL.",
+  "summary": "A bold industrial upgrade for a Griffith sandblasting shop and blast-media store. It pairs navy and safety yellow with real job photos, keeps every live shop URL, and drives quote calls.",
   "modules": {
     "design": {
       "enabled": true,
-      "one_liner": "Clean industrial blue-and-steel site led by real before/after shop work.",
+      "one_liner": "Navy steel and safety yellow: a working blast shop that also ships media.",
       "adjectives": [
-        "rugged",
-        "precise",
-        "straightforward"
+        "bold",
+        "industrial",
+        "no-nonsense"
       ],
       "avoid_feel": [
-        "generic stock-photo industrial",
-        "glossy corporate",
-        "cluttered Wix template"
+        "corporate SaaS",
+        "soft pastel",
+        "generic template"
       ],
       "references": [
         {
           "name": "Clemco Industries",
           "url": "https://www.clemcoindustries.com",
-          "take": "Clear product categories and spec-first cards"
+          "take": "Confident industrial photography and clear product categories"
         },
         {
           "name": "Kramer Industries",
           "url": "https://www.kramerindustriesonline.com",
-          "take": "Media-by-application guidance next to buy links"
+          "take": "Blast-media category browsing and size/price clarity"
         },
         {
-          "name": "Marco",
-          "url": "https://www.marco.us",
-          "take": "Bold industrial hero and tidy service grid"
+          "name": "Media Blast & Abrasive",
+          "url": "https://www.mediablast.com",
+          "take": "Combining blasting services and media sales in one site"
         }
       ],
       "type": {
-        "heading": "Montserrat 700/800",
-        "body": "Open Sans 400/600",
-        "scale": "1.25 ratio; body 16-18px; H1 44-56px desktop, 32px mobile"
-      }
+        "heading": "Montserrat 800, tight tracking, uppercase eyebrows",
+        "body": "Montserrat 400/500, 17px, system-ui fallback",
+        "scale": "1.25 ratio; hero 56/36px desktop/phone; h2 36/28px"
+      },
+      "accent": {
+        "hex": "#EDCD1F",
+        "name": "Safety yellow",
+        "observed": true,
+        "use": "Primary CTA fills, stat numerals on navy, active tab underline, price highlights on dark. Never as text on white."
+      },
+      "buttons": {
+        "shape": "rounded",
+        "primary": "Yellow #EDCD1F fill, navy bold text, 10px radius, lifts 2px with shadow-lg on hover",
+        "secondary": "2px outline (white on dark, navy on light), bold text, 10px radius, fills on hover"
+      },
+      "radius": {
+        "card": "16px",
+        "button": "10px",
+        "image": "14px",
+        "chip": "999px"
+      },
+      "shadow": {
+        "sm": "0 2px 8px rgba(2,12,41,0.10)",
+        "lg": "0 18px 40px rgba(2,12,41,0.24)"
+      },
+      "bands": [
+        "photo",
+        "dark",
+        "light",
+        "tint",
+        "light",
+        "dark",
+        "accent",
+        "light"
+      ],
+      "signature": "Big-number proof band: huge yellow numerals on navy (17+ years, 12,000 lb lift, 9,000 lb load, 5 media types), with a diagonal hazard-stripe edge.",
+      "hero": {
+        "treatment": "full-bleed photo with dark overlay",
+        "photo": "https://static.wixstatic.com/media/86cebe_5f7a2cf669c340fca4f63e400528b784~mv2.jpeg",
+        "overlay": "linear-gradient(90deg, rgba(2,12,41,0.88) 0%, rgba(2,12,41,0.55) 60%, rgba(2,12,41,0.25) 100%)"
+      },
+      "motion": "The hero headline rises and fades in over 450ms on load and the yellow underline wipes in. Both are off under prefers-reduced-motion.",
+      "banned": [
+        "50/50 split hero",
+        "centred hero with three icon cards under it",
+        "the same bordered box in every section",
+        "flat zero-radius boxes with hairline borders everywhere",
+        "4+ full-width cards stacked on phones",
+        "purple gradients",
+        "emoji icons",
+        "placeholder copy",
+        "stock photos",
+        "yellow text on white",
+        "autoplay hero background video"
+      ]
     },
     "layout": {
       "enabled": true,
@@ -486,112 +513,110 @@
         {
           "section": "Hero",
           "layout": "hero",
-          "content": "Tank split photo, navy overlay, tagline headline, Get a quote button, phone link"
+          "content": "Eyebrow: Superior quality. Unbeatable service. H1: Sandblasting and blast media in Northwest Indiana. Primary CTA: Get a quote (tel). Text link: Buy abrasives.",
+          "style": "Full-bleed outdoor blaster photo, navy gradient scrim, white headline, yellow button",
+          "mobile": "stack"
         },
         {
-          "section": "Proof",
+          "section": "Proof band",
           "layout": "stat-band",
-          "content": "17+ years | 4.7 Google rating | 9,000 lb max load | Chicagoland + NW Indiana"
+          "content": "17+ years | 12,000 lb lift | 9,000 lb max load | 5 blast media types",
+          "style": "Navy band with huge yellow numerals and a hazard-stripe top edge (the signature element)",
+          "mobile": "2-up"
         },
         {
           "section": "Services",
           "layout": "card-grid",
-          "content": "5 icon cards: sandblasting, glass bead, plastic media, industrial painting, pickup and delivery"
+          "content": "Sandblasting; Glass bead (satin stainless); Plastic media (aviation); Industrial painting (zinc primer, epoxy)",
+          "style": "White band, photo cards with a 14px image radius, Lucide icon chip, one-line copy, shadow-sm",
+          "mobile": "scroller"
         },
         {
-          "section": "Results",
-          "layout": "split",
-          "content": "Before/after slider (stainless plate) beside 3 short bullet chips"
+          "section": "Before / after",
+          "layout": "gallery",
+          "content": "Tank split, half-blasted panel, weld vs blasted close-up, blasted hopper",
+          "style": "Tint band, asymmetric image mosaic, captions on a navy scrim",
+          "mobile": "carousel"
         },
         {
           "section": "Blast media",
           "layout": "product-row",
-          "content": "5 category cards with price ranges, link to /shop, free shipping line"
+          "content": "Crushed glass, glass beads, aluminum oxide, urea plastic, walnut shells, with price ranges and a link to /shop",
+          "style": "White band, product cards with product photos, price in navy, yellow hover bar",
+          "mobile": "scroller"
         },
         {
-          "section": "Pickup and delivery",
-          "layout": "steps",
-          "content": "Request quote > We pick up > Blast and finish > Deliver back"
+          "section": "Pickup & delivery",
+          "layout": "split",
+          "content": "Chicagoland + NW Indiana. Chips: 16 ft bed, 9,000 lb max load, 12,000 lb lift. CTA: Ask about pickup.",
+          "style": "Charcoal band, truck photo cropped to hide door lettering, chips with yellow borders",
+          "mobile": "split-stack"
         },
         {
-          "section": "Gallery",
-          "layout": "gallery",
-          "content": "Hopper, hood, machined part, tank, paint booth, blast room"
-        },
-        {
-          "section": "Quote",
+          "section": "Quote strip",
           "layout": "cta-strip",
-          "content": "Get a quote, phone, hours"
+          "content": "Need it blasted? Call (708) 895-6070 or email kevinjr@imsblasting.com",
+          "style": "Yellow band, navy text, navy button",
+          "mobile": "stack"
+        },
+        {
+          "section": "Shop FAQ",
+          "layout": "faq",
+          "content": "Shipping cost? Sales tax? Returns? Hours?",
+          "style": "White band, accordion with yellow chevrons",
+          "mobile": "accordion"
         }
       ],
       "rewrites": [
         {
-          "old_excerpt": "Plastic media blasting... zero surface deformation",
-          "pattern": "cards",
-          "new_copy": "Plastic Media — For aviation parts. Zero surface deformation."
-        },
-        {
-          "old_excerpt": "16 ft truck bed, 9,000 lb max load",
-          "pattern": "stat",
-          "new_copy": "16 ft bed | 9,000 lb load | 12,000 lb lift"
-        },
-        {
-          "old_excerpt": "crushed glass, urea plastic, aluminum oxide, glass beads, walnut shells",
+          "old_excerpt": "16 ft truck bed, 9,000 lb max load; 12,000 lb lift",
           "pattern": "chips",
-          "new_copy": "Crushed Glass · Urea Plastic · Aluminum Oxide · Glass Beads · Walnut Shells"
+          "new_copy": "16 ft bed · 9,000 lb load · 12,000 lb lift"
         },
         {
-          "old_excerpt": "pipes, pumps, and frames with zinc primers and epoxy paints",
-          "pattern": "icons",
-          "new_copy": "Pipes · Pumps · Frames — zinc primer and epoxy finishes"
+          "old_excerpt": "satin finish on stainless steel",
+          "pattern": "cards",
+          "new_copy": "Glass bead: satin finish for stainless."
+        },
+        {
+          "old_excerpt": "Free shipping to the continental U.S.; all sales final",
+          "pattern": "accordion",
+          "new_copy": "Free U.S. shipping (continental). AK, HI, and international may cost extra. Prices exclude tax. All sales final."
+        },
+        {
+          "old_excerpt": "Superior quality. Unbeatable service.",
+          "pattern": "stat",
+          "new_copy": "17+ years of sandblast supply and service."
         }
       ]
     },
     "media": {
       "enabled": true,
       "counts": {
-        "site_photos": 11,
+        "site_photos": 12,
         "gbp_photos": 7,
         "logos": 2,
-        "videos": 2,
+        "videos": 1,
         "product_images": 71
       },
       "items": [
         {
-          "url": "https://static.wixstatic.com/media/86cebe_c66255e8f25a4292a0f18b44bd30a3f2~mv2.png",
-          "type": "logo",
+          "url": "https://static.wixstatic.com/media/86cebe_5f7a2cf669c340fca4f63e400528b784~mv2.jpeg",
+          "type": "photo",
           "px": [
-            2593,
-            1007
+            5616,
+            3744
           ],
           "verdict": "use",
-          "reason": "Official wordmark",
-          "use_for": "Header on white"
-        },
-        {
-          "url": "https://static.wixstatic.com/media/85c608_03b66576faf14c5c999e91cb3ff76edd~mv2.png",
-          "type": "logo",
-          "verdict": "use",
-          "reason": "Mark only",
-          "use_for": "Favicon"
+          "reason": "Real outdoor blasting shot, high-res",
+          "use_for": "Hero"
         },
         {
           "url": "https://static.wixstatic.com/media/86cebe_06eedf9086d343d3927cd522e9b256bd~mv2.jpeg",
           "type": "photo",
-          "px": [
-            2826,
-            1505
-          ],
           "verdict": "use",
-          "reason": "Real before/after, wide, high-res",
-          "use_for": "Hero and OG image"
-        },
-        {
-          "url": "https://static.wixstatic.com/media/85c608_929e95ee88d8425c934cff9453326d3d~mv2.jpg",
-          "type": "photo",
-          "verdict": "check",
-          "reason": "Strong before/after; size unknown",
-          "use_for": "Before/after split"
+          "reason": "Strong before/after tank",
+          "use_for": "Mosaic lead tile"
         },
         {
           "url": "https://static.wixstatic.com/media/85c608_e89467ab946149e3b657fa4d7164f58c~mv2.jpg",
@@ -601,30 +626,30 @@
             4032
           ],
           "verdict": "use",
-          "reason": "Real rusted vs primed hood",
-          "use_for": "Gallery"
+          "reason": "Half-rusted, half-blasted panel",
+          "use_for": "Mosaic tall tile"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/85c608_929e95ee88d8425c934cff9453326d3d~mv2.jpg",
+          "type": "photo",
+          "px": [
+            1144,
+            1049
+          ],
+          "verdict": "use",
+          "reason": "Weld vs blasted close-up",
+          "use_for": "Mosaic, services card"
         },
         {
           "url": "https://static.wixstatic.com/media/86cebe_07d6fc360703423fab37337c2827a161~mv2.jpeg",
           "type": "photo",
           "px": [
-            3000,
-            4000
+            4000,
+            3000
           ],
           "verdict": "use",
-          "reason": "Finished hopper, high-res",
-          "use_for": "Painting card, gallery"
-        },
-        {
-          "url": "https://static.wixstatic.com/media/86cebe_abaebb386a5e47419b981f84127ba83d~mv2.jpeg",
-          "type": "photo",
-          "px": [
-            2794,
-            882
-          ],
-          "verdict": "use",
-          "reason": "Clean cut-out part",
-          "use_for": "Service card or band"
+          "reason": "Finished blasted hopper",
+          "use_for": "Mosaic, sandblasting card"
         },
         {
           "url": "https://static.wixstatic.com/media/86cebe_cdb8780be4dc484d86f433d3dc5ee42f~mv2.jpeg",
@@ -634,47 +659,98 @@
             3648
           ],
           "verdict": "check",
-          "reason": "Door shows unconfirmed phone; crop or confirm",
-          "use_for": "Delivery steps"
+          "reason": "Door shows an unconfirmed phone; crop it out",
+          "use_for": "Pickup & delivery split"
         },
         {
-          "url": "https://static.wixstatic.com/media/86cebe_316fc122b3d54900a620741443aeec24~mv2.jpeg",
+          "url": "https://static.wixstatic.com/media/86cebe_abaebb386a5e47419b981f84127ba83d~mv2.jpeg",
+          "type": "photo",
+          "px": [
+            2794,
+            882
+          ],
+          "verdict": "check",
+          "reason": "Cut-out part; wide aspect",
+          "use_for": "Painting card or band accent"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/86cebe_e97b50c50dec4e2696a0c46087d668d5~mv2.jpeg",
           "type": "photo",
           "px": [
             600,
             400
           ],
           "verdict": "check",
-          "reason": "Low-res paint booth",
-          "use_for": "Small gallery tile only"
+          "reason": "Low-res blast cabinet",
+          "use_for": "Small tile only"
         },
         {
           "url": "https://static.wixstatic.com/media/86cebe_4706c874cb764eb8a56c407e9f0511e0~mv2.jpg",
           "type": "photo",
           "verdict": "skip",
-          "reason": "Shutterstock image",
+          "reason": "Shutterstock file, not shop work",
           "use_for": ""
+        },
+        {
+          "url": "https://static.wixstatic.com/media/86cebe_c66255e8f25a4292a0f18b44bd30a3f2~mv2.png",
+          "type": "logo",
+          "px": [
+            2593,
+            1007
+          ],
+          "verdict": "use",
+          "reason": "Header wordmark",
+          "use_for": "Header, footer on a white plate"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/85c608_03b66576faf14c5c999e91cb3ff76edd~mv2.png",
+          "type": "logo",
+          "px": [
+            867,
+            1007
+          ],
+          "verdict": "use",
+          "reason": "Mark only",
+          "use_for": "Favicon"
         },
         {
           "url": "https://video.wixstatic.com/video/85c608_7127f277a7314aa0bcaba15162b8849c/1080p/mp4/file.mp4",
           "type": "video",
-          "px": [
-            1920,
-            1080
-          ],
           "verdict": "check",
-          "reason": "Source unlabeled, may be stock",
-          "use_for": "Optional muted hero loop if confirmed"
+          "reason": "12.5 MB, subject not watched",
+          "use_for": "Optional click-to-play on /services"
         },
         {
-          "url": "https://video.wixstatic.com/video/85c608_bb1e10487bfe41cf87cb3fc89f3b352d/480p/mp4/file.mp4",
-          "type": "video",
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RXn-N_9_cgnSMM30_Q1QcajotA9R1kcp_OxMIbTwg1gc5qbAkt8Z-QW1t1J9ZqE4i_c-fl_Fb6qfo9tXz-cq3BbkbKhiOVOpWjchkdQere4z1tb94UVobN_7bZ1A6TAAHH2ok26g=w5472-h3648-k-no",
+          "type": "photo",
           "px": [
-            640,
-            480
+            5472,
+            3648
+          ],
+          "verdict": "check",
+          "reason": "Likely a duplicate of the truck photo",
+          "use_for": "Skip if duplicate"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RScAkibUFCWIuvNYxDYjx06zoTPU2qTKApBJom5WrbLXs_labRsc4hz56pataYv_xYFHlGv4Ko6kd7NS9br291CrpUA5B_xRh6bvSCYdnBsX-QNhO4-wnLEFNqkigCF_fqVytq=w955-h955-k-no",
+          "type": "photo",
+          "px": [
+            955,
+            955
+          ],
+          "verdict": "check",
+          "reason": "Subject unknown",
+          "use_for": "Gallery if on-topic"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QQKlvj2qHi6lYuTPZvGvyCrAwRd3hCQoGuh0jDifAY14NIONHib6dqs88lfePALQEc1huGxDbKRyXI7wfam0gLyXkWPr5HmsD0G3b_YsYTEfAz0rcXmrrZHIdd6pKMA81xm-44Dals8bQ=w2593-h1007-k-no",
+          "type": "logo",
+          "px": [
+            2593,
+            1007
           ],
           "verdict": "skip",
-          "reason": "Low-res, hidden in old gallery",
+          "reason": "Duplicate of the site logo",
           "use_for": ""
         },
         {
@@ -685,12 +761,12 @@
             100
           ],
           "verdict": "skip",
-          "reason": "Tiny Street View thumbnail",
+          "reason": "Tiny street view thumbnail",
           "use_for": ""
         }
       ],
       "recommendation": "curated",
-      "notes": "GBP photos at 5472x3648 and 2593x1007 likely duplicate the truck photo and logo. Blast room IMG_4276 and warehouse IMG_4307 are 600x400; small tiles only."
+      "notes": "Three gallery images are 600×400 and one booth still is 640×480; use them only in small tiles. The GBP 600×400 and 548×275 images are small tiles at best."
     },
     "shop": {
       "enabled": true,
@@ -703,9 +779,9 @@
           "price_range": "$24.99–$49.99"
         },
         {
-          "name": "Urea plastic",
+          "name": "Glass beads",
           "count": 2,
-          "price_range": "$35.99–$124.99"
+          "price_range": "$30.99–$79.99"
         },
         {
           "name": "Aluminum oxide",
@@ -713,9 +789,9 @@
           "price_range": "$25.99–$114.99"
         },
         {
-          "name": "Glass beads",
+          "name": "Urea plastic",
           "count": 2,
-          "price_range": "$30.99–$79.99"
+          "price_range": "$35.99–$124.99"
         },
         {
           "name": "Walnut shells",
@@ -737,36 +813,6 @@
           "category": "Crushed glass"
         },
         {
-          "name": "Urea Plastic Blast Media - 5 lbs.",
-          "path": "/product-page/urea-plastic-blast-media-5-lbs-1",
-          "price": "$35.99",
-          "category": "Urea plastic"
-        },
-        {
-          "name": "Urea Plastic Blast Media - 20 lbs.",
-          "path": "/product-page/urea-plastic-blast-media-5-lbs",
-          "price": "$124.99",
-          "category": "Urea plastic"
-        },
-        {
-          "name": "Aluminum Oxide - 8 lbs. BOX",
-          "path": "/product-page/aluminum-oxide-8-lbs-box",
-          "price": "$25.99",
-          "category": "Aluminum oxide"
-        },
-        {
-          "name": "Aluminum Oxide Blast Media - 12 lbs.",
-          "path": "/product-page/aluminum-oxide-blast-media-12-lbs",
-          "price": "$34.99",
-          "category": "Aluminum oxide"
-        },
-        {
-          "name": "Aluminum Oxide Blast Media - 50 lbs.",
-          "path": "/product-page/aluminum-oxide-50-lbs",
-          "price": "$114.99",
-          "category": "Aluminum oxide"
-        },
-        {
           "name": "Glass Beads Blast Media - 10 lbs.",
           "path": "/product-page/glass-beads-blast-media-10-lbs",
           "price": "$30.99",
@@ -777,6 +823,36 @@
           "path": "/product-page/glass-beads-blast-media-40-lbs",
           "price": "$79.99",
           "category": "Glass beads"
+        },
+        {
+          "name": "Aluminum Oxide - 8 lbs. BOX",
+          "path": "/product-page/aluminum-oxide-8-lbs-box",
+          "price": "$25.99",
+          "category": "Aluminum oxide"
+        },
+        {
+          "name": "Aluminum Oxide Blast Media - 12 lbs.",
+          "path": "/product-page/aluminum-oxide-blast-media-12-lbs",
+          "price": "$34.99 (#320 grit $38.99)",
+          "category": "Aluminum oxide"
+        },
+        {
+          "name": "Aluminum Oxide Blast Media - 50 lbs.",
+          "path": "/product-page/aluminum-oxide-50-lbs",
+          "price": "$114.99",
+          "category": "Aluminum oxide"
+        },
+        {
+          "name": "Urea Plastic Blast Media - 5 lbs.",
+          "path": "/product-page/urea-plastic-blast-media-5-lbs-1",
+          "price": "$35.99",
+          "category": "Urea plastic"
+        },
+        {
+          "name": "Urea Plastic Blast Media - 20 lbs.",
+          "path": "/product-page/urea-plastic-blast-media-5-lbs",
+          "price": "$124.99",
+          "category": "Urea plastic"
         },
         {
           "name": "Walnut Shells Blast Media - 15 lbs.",
@@ -799,20 +875,19 @@
         "sandblasting Chicagoland",
         "glass bead blasting",
         "plastic media blasting",
-        "industrial painting Griffith",
-        "blast media for sale",
-        "aluminum oxide blast media",
+        "industrial painting Griffith IN",
         "crushed glass blast media",
+        "aluminum oxide blast media",
+        "urea plastic blast media",
         "walnut shell blast media"
       ],
-      "title_pattern": "{Page} | Industrial Mineral Supply | Griffith, IN",
-      "meta_pattern": "{Service or product} from Industrial Mineral Supply in Griffith, IN. Call (708) 895-6070 for a quote.",
+      "title_pattern": "{Page} | Industrial Mineral Supply, Griffith IN",
+      "meta_pattern": "{Page summary}. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.",
       "schema_types": [
         "LocalBusiness",
         "Product",
         "Offer",
-        "BreadcrumbList",
-        "FAQPage"
+        "BreadcrumbList"
       ],
       "local": {
         "city": "Griffith, IN",
@@ -823,18 +898,18 @@
       },
       "url_policy": "keep_live_urls",
       "live_urls": [
-        "https://www.imsblasting.com",
-        "https://www.imsblasting.com/shop",
-        "https://www.imsblasting.com/product-page/aluminum-oxide-blast-media-12-lbs",
-        "https://www.imsblasting.com/product-page/glass-beads-blast-media-40-lbs",
-        "https://www.imsblasting.com/product-page/glass-beads-blast-media-10-lbs",
-        "https://www.imsblasting.com/product-page/aluminum-oxide-50-lbs",
-        "https://www.imsblasting.com/product-page/urea-plastic-blast-media-5-lbs",
-        "https://www.imsblasting.com/product-page/aluminum-oxide-8-lbs-box",
-        "https://www.imsblasting.com/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1",
-        "https://www.imsblasting.com/product-page/walnut-shells-blast-media-5-lbs",
-        "https://www.imsblasting.com/product-page/urea-plastic-blast-media-5-lbs-1",
-        "https://www.imsblasting.com/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs"
+        "/",
+        "/shop",
+        "/product-page/aluminum-oxide-blast-media-12-lbs",
+        "/product-page/glass-beads-blast-media-40-lbs",
+        "/product-page/glass-beads-blast-media-10-lbs",
+        "/product-page/aluminum-oxide-50-lbs",
+        "/product-page/urea-plastic-blast-media-5-lbs",
+        "/product-page/aluminum-oxide-8-lbs-box",
+        "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs-1",
+        "/product-page/walnut-shells-blast-media-5-lbs",
+        "/product-page/urea-plastic-blast-media-5-lbs-1",
+        "/product-page/tru-abrasives-crushed-glass-blast-media-10-lbs"
       ],
       "redirects": []
     },
@@ -846,7 +921,7 @@
       "hosting": "Vercel",
       "baseline": "Widely available",
       "enabled": true,
-      "forms": "Quote form (provider TBD)",
+      "forms": "none",
       "analytics": "none"
     },
     "ui_framework": {
@@ -856,7 +931,7 @@
         "shadcn-vue",
         "daisyui"
       ],
-      "reason": "Industrial B2B service shop first; small 10-item store fits Flowbite cards and tabs."
+      "reason": "Industrial service and B2B supplier with a small catalog; Flowbite's drawer, tabs, carousel, and accordion cover it."
     },
     "site_map": {
       "enabled": true,
@@ -881,7 +956,10 @@
     "one_primary_cta": true,
     "home_layout_types": 8,
     "urls_kept": true,
-    "no_fact_check_notes": true
+    "no_fact_check_notes": true,
+    "accent_set": true,
+    "no_long_phone_stacks": true,
+    "no_split_hero": true
   },
   "brief_schema": "v2"
 }
