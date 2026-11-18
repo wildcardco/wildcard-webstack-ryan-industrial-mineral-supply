@@ -18,14 +18,10 @@ const { product } = Astro.props as { product: Product };
     <p>
       <a class="content-link" href="/shop">Abrasives</a>
     </p>
-    <div class="mt-6 grid items-start gap-8 md:grid-cols-2">
-      <img
-        src={product.image}
-        alt={product.imageAlt}
-        class="w-full rounded-lg bg-[#f7f7f7] object-contain"
-        width="1200"
-        height="1200"
-      />
+    <div class="product-detail mt-6">
+      <div class="product-frame">
+        <img src={product.image} alt={product.imageAlt} width="800" height="600" />
+      </div>
       <div>
         <h1 class="text-3xl font-bold">{product.name}</h1>
         <div class="mt-4">

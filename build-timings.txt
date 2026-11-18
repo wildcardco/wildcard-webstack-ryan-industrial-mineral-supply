@@ -1,81 +1,80 @@
-00:12:37 [vite] Re-optimizing dependencies because lockfile has changed
-00:12:37 [types] Generated 231ms
-00:12:37 [build] output: "static"
-00:12:37 [build] mode: "static"
-00:12:37 [build] directory: /agent/repos/wildcard-webstack-ryan-industrial-mineral-supply/dist/
-00:12:37 [build] Collecting build info...
-00:12:37 [build] ✓ Completed in 336ms.
-00:12:37 [build] Building static entrypoints...
-00:12:37 [vite] ✓ built in 267ms
-00:12:37 [vite] ✓ built in 131ms
-00:12:37 [build] Rearranging server assets...
+00:18:45 [types] Generated 58ms
+00:18:45 [build] output: "static"
+00:18:45 [build] mode: "static"
+00:18:45 [build] directory: /agent/repos/wildcard-webstack-ryan-industrial-mineral-supply/dist/
+00:18:45 [build] Collecting build info...
+00:18:45 [build] ✓ Completed in 166ms.
+00:18:45 [build] Building static entrypoints...
+00:18:45 [vite] ✓ built in 399ms
+00:18:45 [vite] ✓ built in 134ms
+00:18:45 [build] Rearranging server assets...
 
  generating static routes 
-00:12:37   ├─ /about/index.html (+18ms) 
-00:12:37   ├─ /contact/index.html (+4ms) 
-00:12:37   ├─ /gallery/index.html (+4ms) 
-00:12:37   ├─ /services/index.html (+7ms) 
-00:12:37   ├─ /shop/tru-abrasives-crushed-glass-blast-media-10-lbs/index.html (+5ms) 
-00:12:37   ├─ /shop/urea-plastic-blast-media-5-lbs/index.html (+2ms) 
-00:12:37   ├─ /shop/aluminum-oxide-8-lbs-box/index.html (+7ms) 
-00:12:37   ├─ /shop/index.html (+4ms) 
-00:12:37   ├─ /index.html (+5ms) 
-00:12:37 ✓ Completed in 80ms.
+00:18:45   ├─ /about/index.html (+18ms) 
+00:18:45   ├─ /contact/index.html (+4ms) 
+00:18:45   ├─ /gallery/index.html (+4ms) 
+00:18:45   ├─ /services/index.html (+7ms) 
+00:18:45   ├─ /shop/tru-abrasives-crushed-glass-blast-media-10-lbs/index.html (+8ms) 
+00:18:45   ├─ /shop/urea-plastic-blast-media-5-lbs/index.html (+3ms) 
+00:18:45   ├─ /shop/aluminum-oxide-8-lbs-box/index.html (+8ms) 
+00:18:45   ├─ /shop/index.html (+4ms) 
+00:18:45   ├─ /index.html (+5ms) 
+00:18:45 ✓ Completed in 87ms.
 
-00:12:37 [build] ✓ Completed in 520ms.
-00:12:37 [build] 9 page(s) built in 859ms
-00:12:37 [build] Complete!
+00:18:45 [build] ✓ Completed in 673ms.
+00:18:45 [build] 9 page(s) built in 843ms
+00:18:45 [build] Complete!
 
  build timings 
-total 969ms · 9 pages · output "static"
+total 948ms · 9 pages · output "static"
 
 Build phases
-  resolve config                       100ms  10.3% ██▃···················
-  setup                                335ms  34.6% ··▅███████▁···········
-    route discovery                      4ms   0.4% ····▁·················
-    vite config                         22ms   2.3% ····▅·················
-    content sync                       231ms  23.8% ····▂█████▁···········
-  prerender bundle                     271ms  28.0% ··········▃█████▇·····
-  client bundle                        131ms  13.6% ················▁███··
-  manifest injection                     5ms   0.5% ···················▁▁·
-  generate pages                        81ms   8.3% ····················██
-    prerenderer setup                   12ms   1.2% ····················▃·
-    static paths                        12ms   1.2% ····················▃·
+  resolve config                        95ms  10.0% ██▂···················
+  setup                                166ms  17.5% ··▅███▃···············
+    route discovery                      5ms   0.5% ····▁·················
+    vite config                         25ms   2.7% ····▅·················
+    content sync                        59ms   6.2% ····▁█▃···············
+  prerender bundle                     401ms  42.3% ·······▇████████▄·····
+  client bundle                        135ms  14.2% ················▄██▆··
+  manifest injection                     6ms   0.6% ···················▂··
+  generate pages                        88ms   9.3% ···················▁██
+    prerenderer setup                   13ms   1.3% ···················▁▂·
+    static paths                        13ms   1.4% ····················▃·
 
-Vite plugins (181ms of the build)
-  @tailwindcss/vite:generate:build      70ms        ·············▁█▅······  1 call · transform 70ms
-  vite:vue                              66ms        ············▄▆▁··▃····  26 calls · transform 66ms
-  astro:build                            9ms        ············▂▁········  12 calls · transform 9ms
-  astro:session-provider                 5ms        ···········▁▁·········  693 calls · resolveId 5ms
-  vite:css-post                          5ms        ···············▁▁·····  27 calls · renderChunk 4ms
-  astro:markdown                         4ms        ···········▁▁·········  682 calls · resolveId 4ms
-  astro:routes                           4ms        ···········▁▁·········  223 calls · transform 4ms
-  astro:head-metadata-build              3ms        ················▁·····  1 call · generateBundle 3ms
+Vite plugins (183ms of the build)
+  @tailwindcss/vite:generate:build      73ms        ·············█▇·······  1 call · transform 73ms
+  vite:vue                              64ms        ···········▁█▁··▂▂····  26 calls · transform 64ms
+  astro:build                            9ms        ···········▂··········  12 calls · transform 9ms
+  astro:session-provider                 5ms        ··········▁▁··········  693 calls · resolveId 5ms
+  astro:markdown                         5ms        ··········▁▁··········  682 calls · resolveId 5ms
+  astro:routes                           5ms        ·········▁▁▁··········  223 calls · transform 5ms
+  vite:css-post                          5ms        ···············▁······  27 calls · renderChunk 4ms
+  astro:vite-plugin-env                  5ms        ··········▁▁··········  5 calls · transform 5ms
 
-Slowest files to bundle (152ms in load/transform)
-  src/styles/global.css                 71ms        ·············▁█▅······  @tailwindcss/vite:generate:build 70ms · vite:css 1ms
-  src/components/ProductCards.vue       23ms        ············▄▁········  vite:vue 23ms
-  src/components/ServicesTabs.vue       15ms        ·············▃···▁····  vite:vue 15ms
-  src/components/GalleryLightbox.vue    11ms        ·············▂···▁····  vite:vue 11ms
-  src/components/SiteNavbar.vue          7ms        ··············▁··▁····  vite:vue 7ms
-  src/pages/index.astro                  6ms        ············▂·········  astro:build 6ms
-  …mponents/ProductInfoAccordion.vue     5ms        ·············▁···▁····  vite:vue 5ms
-  src/components/ServiceCards.vue        4ms        ·············▁········  vite:vue 4ms
+Slowest files to bundle (153ms in load/transform)
+  src/styles/global.css                 74ms        ·············█▇·······  @tailwindcss/vite:generate:build 73ms · vite:css 1ms
+  src/components/ProductCards.vue       20ms        ···········▁▃·········  vite:vue 20ms
+  src/components/ServicesTabs.vue       20ms        ············▃···▁·····  vite:vue 20ms
+  src/components/SiteNavbar.vue          8ms        ·············▁···▁····  vite:vue 8ms
+  src/components/GalleryLightbox.vue     7ms        ············▁···▁▁····  vite:vue 7ms
+  …mponents/ProductInfoAccordion.vue     5ms        ············▁····▁····  vite:vue 5ms
+  src/pages/gallery.astro                4ms        ···········▁··········  astro:build 4ms
+  …ro/dist/actions/runtime/client.js     3ms        ··········▁▁··········  astro:vite-plugin-env 3ms
 
-Page rendering (56ms across 9 pages)
-  component render                      42ms   4.3% ····················▃▆
-  page pipeline                         14ms   1.4%
+Page rendering (61ms across 9 pages)
+  component render                      46ms   4.8% ····················▄▆
+  page pipeline                         15ms   1.6%
 
-Slowest pages (median 5ms · p95 18ms)
-  /about                                18ms
+Slowest pages (median 5ms · p95 19ms)
+  /about                                19ms
+  …-crushed-glass-blast-media-10-lbs     8ms         /shop/[slug]
+  /shop/aluminum-oxide-8-lbs-box         8ms         /shop/[slug]
   /services                              7ms
-  /shop/aluminum-oxide-8-lbs-box         7ms         /shop/[slug]
-  …-crushed-glass-blast-media-10-lbs     5ms         /shop/[slug]
   /                                      5ms
+  /shop                                  5ms
   /gallery                               4ms
-  /shop                                  4ms
   /contact                               4ms
 
-Integrations (71ms in hooks)
-  @astrojs/vue                          71ms   7.3% ··▃█▃·················  astro:config:setup 71ms
+Integrations (68ms in hooks)
+  @astrojs/vue                          68ms   7.1% ··▃█▂·················  astro:config:setup 68ms
 
