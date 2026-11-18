@@ -12,8 +12,8 @@ import { products } from '../data/site';
         </span>
         <span class="product-card__body">
           <span class="product-badges">
-            <fwb-badge>New Arrival</fwb-badge>
-            <fwb-badge type="dark">stock unverified</fwb-badge>
+            <fwb-badge v-if="product.newArrival" class="badge-new">New Arrival</fwb-badge>
+            <fwb-badge class="badge-stock" type="dark">stock unverified</fwb-badge>
           </span>
           <h3 class="product-card__title">{{ product.name }}</h3>
           <p class="product-card__price">{{ product.price }}</p>

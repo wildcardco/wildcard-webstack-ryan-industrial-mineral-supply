@@ -25,7 +25,7 @@ const { product } = Astro.props as { product: Product };
       <div>
         <h1 class="text-3xl font-bold">{product.name}</h1>
         <div class="mt-4">
-          <ProductBadges />
+          <ProductBadges newArrival={product.newArrival} />
         </div>
         <p class="mt-4 text-3xl font-semibold text-black">{product.price}</p>
         <p class="mt-2 text-[#3b3a3a]">price as listed on imsblasting.com</p>
