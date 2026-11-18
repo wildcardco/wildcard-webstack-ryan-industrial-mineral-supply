@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductCard from '../../components/islands/ProductCard.vue';
+import BrandButton from '../../components/islands/BrandButton.vue';
+import FaqList from '../../components/islands/FaqList.vue';
+import {
+  breadcrumbSchema,
+  business,
+  faqs,
+  productPath,
+  productSchema,
+  products,
+  relatedProducts,
+  type Product,
+} from '../../data/site';
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const related = relatedProducts(product.slug);
+const description = `${product.name} ${product.price}. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.`;
+---
+
+<Base
+  title={product.name}
+  description={description}
+  jsonLd={[
+    productSchema(product),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Buy Abrasives', path: '/shop' },
+      { name: product.name, path: productPath(product.slug) },
+    ]),
+  ]}
+>
+  <article class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-8 md:py-14">
+      <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+        <a class="text-navy" href="/">Home</a>
+        <span aria-hidden="true"> / </span>
+        <a class="text-navy" href="/shop">Buy Abrasives</a>
+        <span aria-hidden="true"> / </span>
+        <span class="text-charcoal">{product.category}</span>
+      </nav>
+      <div class="mt-6 grid items-start gap-8 md:grid-cols-2">
+        <img
+          src={product.image}
+          alt={product.name}
+          width="1200"
+          height="1200"
+          class="w-full rounded-[14px] bg-tint object-contain shadow-card"
+        />
+        <div class="min-w-0">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-navy">{product.category}</p>
+          <h1 class="mt-2 text-[28px] font-extrabold leading-tight tracking-tight text-navy md:text-4xl">{product.name}</h1>
+          <p class="mt-4 text-3xl font-extrabold text-navy">{product.price}</p>
+          {product.note && <p class="mt-2 text-lg font-extrabold text-charcoal">{product.note}</p>}
+          <p class="mt-2 text-sm font-semibold text-muted">Excluding sales tax</p>
+          <div class="mt-6">
+            <BrandButton href={business.phoneHref}>Call to order</BrandButton>
+          </div>
+          <h2 class="mt-8 text-sm font-extrabold uppercase tracking-[0.18em] text-navy">{product.sizeLabel}</h2>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {
+              product.sizes.map((size) => (
+                <li class="rounded-full border-2 border-navy px-3 py-1.5 text-sm font-bold text-navy">
+                  {size.label}
+                  {size.price ? ` ${size.price}` : ''}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="mt-6 space-y-3">
+            {product.paragraphs.map((line) => <p class="text-charcoal">{line}</p>)}
+          </div>
+          {
+            product.chips.length > 0 && (
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {product.chips.map((chip) => (
+                  <li class="rounded-full bg-tint px-3 py-1.5 text-sm font-bold text-navy">{chip}</li>
+                ))}
+              </ul>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </article>
+  <section class="bg-tint">
+    <div class="mx-auto max-w-3xl px-4 py-12 md:py-16">
+      <h2 class="text-[28px] font-extrabold tracking-tight text-navy">Shipping and returns</h2>
+      <div class="mt-5">
+        <FaqList client:only="vue" items={faqs.slice(0, 3)} />
+      </div>
+    </div>
+  </section>
+  {
+    related.length > 0 && (
+      <section class="bg-white">
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <h2 class="text-[28px] font-extrabold tracking-tight text-navy">Related media</h2>
+          <div class="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {related.map((item) => (
+              <ProductCard
+                href={productPath(item.slug)}
+                img={item.image}
+                alt={item.name}
+                title={item.name}
+                price={item.price}
+                note={item.note}
+                category={item.category}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>

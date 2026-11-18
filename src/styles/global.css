@@ -1,0 +1,235 @@
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite-vue/dist";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #020c29;
+  --color-accent: #edcd1f;
+  --color-charcoal: #3b3a3a;
+  --color-muted: #5c5c5c;
+  --color-mid: #949494;
+  --color-tint: #f5f5f4;
+  --shadow-card: 0 2px 8px rgba(2, 12, 41, 0.1);
+  --shadow-lift: 0 18px 40px rgba(2, 12, 41, 0.24);
+  --radius-card: 16px;
+  --radius-btn: 10px;
+  --radius-photo: 14px;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #fff;
+    color: #3b3a3a;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  img,
+  picture,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 3px solid #020c29;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .motion-rise,
+  .hero-wipe {
+    animation: none;
+  }
+}
+
+.motion-rise {
+  animation: hero-rise 450ms ease-out both;
+}
+
+.hero-wipe {
+  display: block;
+  width: 7.5rem;
+  height: 6px;
+  margin-top: 0.85rem;
+  border-radius: 999px;
+  background: #edcd1f;
+  transform-origin: left center;
+  animation: wipe 450ms ease-out 150ms both;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wipe {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hazard-edge {
+  height: 14px;
+  background: repeating-linear-gradient(-45deg, #edcd1f 0 12px, #020c29 12px 24px);
+}
+
+.snap-row {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.snap-row > * {
+  flex: 0 0 82%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .snap-row {
+    display: grid;
+    overflow: visible;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .snap-row.media-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .snap-row > * {
+    flex: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .snap-row.media-row {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* FwbCard ships min-w-sm. Keep the kit card; drop the min width so phones do not overflow. */
+.ims-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(2, 12, 41, 0.1);
+}
+
+.ims-card:hover {
+  box-shadow: 0 18px 40px rgba(2, 12, 41, 0.24);
+}
+
+.ims-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 14px 14px 0 0;
+  background: #f5f5f4;
+}
+
+.faq-accordion svg {
+  color: #edcd1f;
+}
+
+.mobile-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 4.25rem;
+  z-index: 80;
+  max-height: calc(100dvh - 4.25rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(2, 12, 41, 0.24);
+}
+
+.mobile-panel aside {
+  position: static;
+  top: auto;
+  left: auto;
+  z-index: auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  transform: none;
+}
+
+.mobile-panel .h-full {
+  height: auto;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 4.25rem 0 auto 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 4.25rem);
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-radius: 0 0 16px 16px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(2, 12, 41, 0.24);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 80;
+  transform: translateY(-200%);
+  border-radius: 10px;
+  background: #edcd1f;
+  color: #020c29;
+  font-weight: 800;
+  padding: 0.6rem 0.9rem;
+}
+
+.skip-link:focus {
+  transform: none;
+}

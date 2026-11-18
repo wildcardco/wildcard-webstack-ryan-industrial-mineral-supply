@@ -1,0 +1,17 @@
+---
+import BrandButton from '../islands/BrandButton.vue';
+import { business } from '../../data/site';
+---
+
+<section class="bg-accent">
+  <div class="mx-auto flex max-w-6xl flex-col items-start gap-5 px-4 py-12 md:flex-row md:items-center md:justify-between md:py-16">
+    <div>
+      <h2 class="text-[28px] font-extrabold leading-tight tracking-tight text-navy md:text-4xl">Need it blasted?</h2>
+      <p class="mt-2 max-w-xl font-semibold text-navy">
+        Call <a class="underline" href={business.phoneHref}>{business.phone}</a>
+        or email <a class="underline" href={business.emailHref}>{business.email}</a>
+      </p>
+    </div>
+    <BrandButton href={business.phoneHref} variant="navy">Call {business.phone}</BrandButton>
+  </div>
+</section>

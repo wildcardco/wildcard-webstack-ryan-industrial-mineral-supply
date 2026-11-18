@@ -1,0 +1,90 @@
+---
+import { Clock, Mail, MapPin, Phone } from '@lucide/astro';
+import Base from '../layouts/Base.astro';
+import PageBand from '../components/blocks/PageBand.astro';
+import { breadcrumbSchema, business } from '../data/site';
+
+const description =
+  'Phone, email, address, and hours for the Griffith shop. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.';
+
+const days = [
+  ['Monday', '8:00 am–4:00 pm'],
+  ['Tuesday', '8:00 am–4:00 pm'],
+  ['Wednesday', '8:00 am–4:00 pm'],
+  ['Thursday', '8:00 am–4:00 pm'],
+  ['Friday', '8:00 am–4:00 pm'],
+  ['Saturday', 'Closed'],
+  ['Sunday', 'Closed'],
+];
+---
+
+<Base
+  title="Contact"
+  description={description}
+  jsonLd={breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ])}
+>
+  <PageBand eyebrow="Griffith, IN" title="Contact the shop" lede="Call, email, or visit during weekday hours." />
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3 md:py-20">
+      <a href={business.phoneHref} class="rounded-[16px] bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-lift">
+        <span class="inline-flex size-11 items-center justify-center rounded-full bg-tint text-navy">
+          <Phone class="size-5" aria-hidden="true" />
+        </span>
+        <h2 class="mt-4 text-xl font-extrabold text-navy">Phone</h2>
+        <p class="mt-2 font-semibold text-charcoal">{business.phone}</p>
+      </a>
+      <a href={business.emailHref} class="rounded-[16px] bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-lift">
+        <span class="inline-flex size-11 items-center justify-center rounded-full bg-tint text-navy">
+          <Mail class="size-5" aria-hidden="true" />
+        </span>
+        <h2 class="mt-4 text-xl font-extrabold text-navy">Email</h2>
+        <p class="mt-2 font-semibold text-charcoal break-all">{business.email}</p>
+      </a>
+      <div class="rounded-[16px] bg-white p-6 shadow-card">
+        <span class="inline-flex size-11 items-center justify-center rounded-full bg-accent text-navy">
+          <MapPin class="size-5" aria-hidden="true" />
+        </span>
+        <h2 class="mt-4 text-xl font-extrabold text-navy">Address</h2>
+        <p class="mt-2 font-semibold text-charcoal">{business.address}</p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-tint">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
+      <div>
+        <h2 class="flex items-center gap-2 text-[28px] font-extrabold tracking-tight text-navy">
+          <Clock class="size-6" aria-hidden="true" />
+          Hours
+        </h2>
+        <table class="mt-4 w-full text-left">
+          <caption class="sr-only">Shop hours</caption>
+          <tbody>
+            {
+              days.map(([day, hours]) => (
+                <tr class="border-b border-white">
+                  <th scope="row" class="py-3 font-bold text-navy">{day}</th>
+                  <td class="py-3 text-right font-semibold text-charcoal">{hours}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2 class="text-[28px] font-extrabold tracking-tight text-navy">Map</h2>
+        <iframe
+          title="Map to Industrial Mineral Supply, 1944 N. Griffith Blvd. Suite C, Griffith, IN"
+          src={business.mapEmbed}
+          class="mt-4 h-72 w-full rounded-[14px] border-0 shadow-card"
+          loading="lazy"
+        ></iframe>
+        <p class="mt-3">
+          <a class="font-bold text-navy underline" href={business.mapLink}>Open the map</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

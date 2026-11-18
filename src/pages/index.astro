@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroHome from '../components/blocks/HeroHome.astro';
+import ProofBand from '../components/blocks/ProofBand.astro';
+import ServiceScroller from '../components/blocks/ServiceScroller.astro';
+import JobMosaic from '../components/blocks/JobMosaic.astro';
+import MediaRow from '../components/blocks/MediaRow.astro';
+import DeliverySplit from '../components/blocks/DeliverySplit.astro';
+import QuoteStrip from '../components/blocks/QuoteStrip.astro';
+import FaqList from '../components/islands/FaqList.vue';
+import { faqs } from '../data/site';
+
+const description =
+  'Sandblasting, blast media, and delivery from Griffith. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.';
+---
+
+<Base title="Home" description={description}>
+  <HeroHome />
+  <ProofBand />
+  <ServiceScroller />
+  <JobMosaic />
+  <MediaRow />
+  <DeliverySplit />
+  <QuoteStrip />
+  <section id="shop-faq" class="bg-white">
+    <div class="mx-auto max-w-3xl px-4 py-12 md:py-20">
+      <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-navy">Shop FAQ</p>
+      <h2 class="mt-2 text-[28px] font-extrabold tracking-tight text-navy md:text-4xl">Shipping, tax, and hours</h2>
+      <div class="mt-6">
+        <FaqList client:only="vue" items={faqs} />
+      </div>
+    </div>
+  </section>
+</Base>

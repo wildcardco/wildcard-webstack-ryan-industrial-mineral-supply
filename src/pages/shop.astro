@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBand from '../components/blocks/PageBand.astro';
+import PolicyChips from '../components/blocks/PolicyChips.astro';
+import ShopCategoryTabs from '../components/islands/ShopCategoryTabs.vue';
+import { breadcrumbSchema, products } from '../data/site';
+
+const description =
+  'Crushed glass, beads, aluminum oxide, urea plastic, and walnut shells. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.';
+---
+
+<Base
+  title="Buy Abrasives"
+  description={description}
+  jsonLd={breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Buy Abrasives', path: '/shop' },
+  ])}
+>
+  <PageBand eyebrow="Retail media" title="Buy abrasives" lede="Ten blast-media products, with the live prices." />
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-20">
+      <ShopCategoryTabs client:load products={products} />
+    </div>
+  </section>
+  <PolicyChips />
+</Base>

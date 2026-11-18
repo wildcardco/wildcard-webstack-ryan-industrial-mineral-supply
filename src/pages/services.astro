@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBand from '../components/blocks/PageBand.astro';
+import ServiceTabs from '../components/islands/ServiceTabs.vue';
+import JobMosaic from '../components/blocks/JobMosaic.astro';
+import QuoteStrip from '../components/blocks/QuoteStrip.astro';
+import { breadcrumbSchema } from '../data/site';
+
+const description =
+  'Sandblasting, glass bead, plastic media, and industrial painting. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.';
+---
+
+<Base
+  title="Services"
+  description={description}
+  jsonLd={breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+  ])}
+>
+  <PageBand eyebrow="Griffith shop" title="Blasting and painting" lede="Four services for parts in Northwest Indiana and Chicagoland." />
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12 md:py-20">
+      <ServiceTabs client:load />
+    </div>
+  </section>
+  <JobMosaic />
+  <QuoteStrip />
+</Base>

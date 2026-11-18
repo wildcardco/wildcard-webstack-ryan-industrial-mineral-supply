@@ -1,0 +1,24 @@
+---
+description: Wild Card build rules for this site. Outranks frontend-design restraint and the web-interface guidelines. The approved brief and design board outrank this file.
+alwaysApply: true
+---
+
+# Wild Card
+
+Source: project build rules for Industrial Mineral Supply. License: project use.
+
+Precedence with the other rule files is declared in AGENTS.md. The approved brief and design board win over this file. This file wins over generic restraint advice.
+
+- Use real client photos only. No stock photos, no illustrations, no unDraw.
+- No walls of text. Paragraphs are 35 words or fewer. Lists of 3 or more items become cards, chips, icons, or a table.
+- One hero headline of 8 words or fewer, with one primary CTA.
+- Full-bleed photo hero. Accent color on primary CTAs.
+- Radius on cards, buttons, images, and chips. Two shadow levels: small at rest, large on hover or featured.
+- Alternating section bands. Adjacent sections do not share a background.
+- Four or more items on phones use a 2-up grid, a contained horizontal snap scroller, tabs, or an accordion. Never four or more full-width stacked cards.
+- Vary card types across the page.
+- Banned: 50/50 split hero; centred hero with three icon cards under it; equal identical card grids for every section; the same bordered box in every section; flat zero-radius hairline boxes everywhere; purple gradients; emoji icons; lorem ipsum or placeholder copy; stock photos; the Tailwind Play CDN; yellow text on white; autoplay hero video; stock or availability badges; fact-check notes on the page.
+- Working mobile nav: hidden until the menu button is used, 44px targets, aria-expanded updates.
+- Baseline Widely available CSS and HTML only. Anchor positioning only with a absolute-position fallback.
+- Never print stock, availability, provenance, or "unverified" notes in the UI. Prices are plain prices.
+- Keep live URLs and product paths exactly. Do not invent awards, years, licenses, prices, reviews, or stock.

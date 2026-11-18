@@ -1,0 +1,32 @@
+---
+import BrandButton from '../islands/BrandButton.vue';
+import { business } from '../../data/site';
+---
+
+<section class="relative isolate min-h-[32rem] overflow-hidden bg-navy text-white md:min-h-[38rem]">
+  <img
+    src="/img/hero.jpg"
+    alt="Worker media-blasting a concrete deck outdoors"
+    width="2000"
+    height="1334"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(90deg, rgba(2,12,41,0.88) 0%, rgba(2,12,41,0.55) 60%, rgba(2,12,41,0.25) 100%);"
+  >
+  </div>
+  <div class="relative z-10 mx-auto flex max-w-6xl flex-col items-start px-4 py-20 md:py-28">
+    <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">{business.tagline}</p>
+    <h1 class="motion-rise mt-3 max-w-3xl text-[36px] font-extrabold leading-none tracking-tight text-white md:text-[56px]">
+      Sandblasting and blast media in Northwest Indiana
+      <span class="hero-wipe" aria-hidden="true"></span>
+    </h1>
+    <div class="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+      <BrandButton href={business.phoneHref}>Get a quote</BrandButton>
+      <a href="/shop" class="inline-flex min-h-11 items-center font-extrabold text-white underline decoration-accent decoration-2 underline-offset-4">
+        Buy abrasives
+      </a>
+    </div>
+  </div>
+</section>
