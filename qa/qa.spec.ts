@@ -25,6 +25,14 @@ const viewports = [
   { width: 1440, height: 900 },
 ] as const;
 
+const productPages = [
+  ['home', '/'],
+  ['shop', '/shop'],
+  ['product-glass', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs'],
+  ['product-urea', '/shop/urea-plastic-blast-media-5-lbs'],
+  ['product-oxide', '/shop/aluminum-oxide-8-lbs-box'],
+] as const;
+
 const schemes = ['light', 'dark'] as const;
 
 const shotDir = path.join(process.cwd(), 'qa', 'screenshots');
@@ -32,6 +40,62 @@ const shotDir = path.join(process.cwd(), 'qa', 'screenshots');
 test.beforeAll(async () => {
   await mkdir(shotDir, { recursive: true });
 });
+
+async function assertProductLayout(page: Page, viewportWidth: number) {
+  const cards = page.locator('.product-card');
+  const count = await cards.count();
+  const boxes = [];
+  for (let i = 0; i < count; i += 1) {
+    const card = cards.nth(i);
+    const box = await card.boundingBox();
+    expect(box, 'product card is on screen').not.toBeNull();
+    expect(box!.x).toBeGreaterThanOrEqual(-1);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewportWidth + 1);
+    const colors = await card.evaluate((el) => {
+      const body = el.querySelector('.product-card__body') as HTMLElement;
+      const title = el.querySelector('h3') as HTMLElement;
+      const note = el.querySelector('.product-card__note') as HTMLElement;
+      const read = (node: HTMLElement) => getComputedStyle(node);
+      return {
+        card: read(el as HTMLElement).backgroundColor,
+        body: read(body).backgroundColor,
+        title: read(title).color,
+        note: read(note).color,
+      };
+    });
+    expect(colors.card).toBe('rgb(255, 255, 255)');
+    expect(colors.body).toBe('rgb(255, 255, 255)');
+    expect(colors.title).toBe('rgb(0, 0, 0)');
+    expect(colors.note).toBe('rgb(59, 58, 58)');
+    expect(box!.x).toBeGreaterThanOrEqual(8);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewportWidth - 8);
+    boxes.push(box!);
+  }
+
+  const badges = page.locator('.product-badges > span');
+  const badgeCount = await badges.count();
+  for (let i = 0; i < badgeCount; i += 1) {
+    const badgeBox = await badges.nth(i).boundingBox();
+    expect(badgeBox, 'badge is visible').not.toBeNull();
+    expect(badgeBox!.height).toBeGreaterThanOrEqual(24);
+    expect(badgeBox!.x + badgeBox!.width).toBeLessThanOrEqual(viewportWidth + 1);
+  }
+
+  if (viewportWidth >= 1024 && count >= 3) {
+    expect(Math.abs(boxes[0].height - boxes[1].height)).toBeLessThanOrEqual(2);
+    expect(Math.abs(boxes[1].height - boxes[2].height)).toBeLessThanOrEqual(2);
+  }
+  if (viewportWidth >= 768 && viewportWidth < 1024 && count >= 2) {
+    expect(Math.abs(boxes[0].height - boxes[1].height)).toBeLessThanOrEqual(2);
+  }
+
+  const frame = page.locator('.product-frame').first();
+  if ((await frame.count()) > 0) {
+    const box = await frame.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewportWidth + 1);
+  }
+}
 
 async function overflow(page: Page) {
   return page.evaluate(() => {
@@ -77,6 +141,7 @@ for (const scheme of schemes) {
 
         const axe = await new AxeBuilder({ page }).withRules(['color-contrast']).analyze();
         expect(axe.violations, JSON.stringify(axe.violations, null, 2)).toEqual([]);
+        await assertProductLayout(page, viewport.width);
 
         if (viewport.width === 375) {
           const menu = page.locator('#site-nav');
@@ -90,6 +155,39 @@ for (const scheme of schemes) {
         });
       });
     }
+  }
+}
+
+for (const scheme of schemes) {
+  for (const [name, url] of productPages) {
+    test(`${scheme} 390 ${name}`, async ({ page }) => {
+      const errors: string[] = [];
+      page.on('pageerror', (error) => errors.push(error.message));
+      page.on('console', (message) => {
+        if (message.type() === 'error') errors.push(message.text());
+      });
+
+      await page.emulateMedia({ colorScheme: scheme });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.goto(url, { waitUntil: 'networkidle' });
+
+      const layout = await overflow(page);
+      expect(layout.scrollWidth, layout.offenders.join('\n')).toBeLessThanOrEqual(layout.viewport + 1);
+      expect(layout.offenders, 'elements wider than the viewport').toEqual([]);
+
+      const axe = await new AxeBuilder({ page }).withRules(['color-contrast']).analyze();
+      expect(axe.violations, JSON.stringify(axe.violations, null, 2)).toEqual([]);
+      await assertProductLayout(page, 390);
+
+      const menu = page.locator('#site-nav');
+      await expect(menu).toBeHidden();
+      expect(errors, 'console errors').toEqual([]);
+
+      await page.screenshot({
+        path: path.join(shotDir, `${scheme}-390-${name}.png`),
+        fullPage: name === 'shop' || name === 'home',
+      });
+    });
   }
 }
 
