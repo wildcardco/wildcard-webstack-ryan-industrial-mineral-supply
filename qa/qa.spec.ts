@@ -14,23 +14,23 @@ const pages = [
   ['gallery', '/gallery'],
   ['contact', '/contact'],
   ['shop', '/shop'],
-  ['product-glass', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs'],
-  ['product-urea', '/shop/urea-plastic-blast-media-5-lbs'],
-  ['product-oxide', '/shop/aluminum-oxide-8-lbs-box'],
+  ['product-glass-10', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs-1'],
+  ['product-urea-5', '/shop/urea-plastic-blast-media-5-lbs-1'],
+  ['product-oxide-8', '/shop/aluminum-oxide-8-lbs-box'],
+  ['product-beads-40', '/shop/glass-beads-blast-media-40-lbs'],
+  ['product-oxide-50', '/shop/aluminum-oxide-50-lbs'],
+  ['product-glass-40', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs'],
+  ['product-walnut-15', '/shop/walnut-shells-blast-media-5-lbs'],
+  ['product-urea-20', '/shop/urea-plastic-blast-media-5-lbs'],
+  ['product-beads-10', '/shop/glass-beads-blast-media-10-lbs'],
+  ['product-oxide-12', '/shop/aluminum-oxide-blast-media-12-lbs'],
 ] as const;
 
 const viewports = [
   { width: 375, height: 812 },
+  { width: 390, height: 844 },
   { width: 768, height: 1024 },
   { width: 1440, height: 900 },
-] as const;
-
-const productPages = [
-  ['home', '/'],
-  ['shop', '/shop'],
-  ['product-glass', '/shop/tru-abrasives-crushed-glass-blast-media-10-lbs'],
-  ['product-urea', '/shop/urea-plastic-blast-media-5-lbs'],
-  ['product-oxide', '/shop/aluminum-oxide-8-lbs-box'],
 ] as const;
 
 const schemes = ['light', 'dark'] as const;
@@ -70,6 +70,14 @@ async function assertProductLayout(page: Page, viewportWidth: number) {
     expect(box!.x).toBeGreaterThanOrEqual(8);
     expect(box!.x + box!.width).toBeLessThanOrEqual(viewportWidth - 8);
     boxes.push(box!);
+  }
+
+  if (count === 10) {
+    for (let i = 0; i < count; i += 1) {
+      const text = await cards.nth(i).innerText();
+      if (i < 5) expect(text).toContain('New Arrival');
+      else expect(text).not.toContain('New Arrival');
+    }
   }
 
   const badges = page.locator('.product-badges > span');
@@ -143,7 +151,7 @@ for (const scheme of schemes) {
         expect(axe.violations, JSON.stringify(axe.violations, null, 2)).toEqual([]);
         await assertProductLayout(page, viewport.width);
 
-        if (viewport.width === 375) {
+        if (viewport.width <= 390) {
           const menu = page.locator('#site-nav');
           await expect(menu).toBeHidden();
         }
@@ -152,42 +160,10 @@ for (const scheme of schemes) {
 
         await page.screenshot({
           path: path.join(shotDir, `${scheme}-${viewport.width}-${name}.png`),
+          fullPage: viewport.width === 390 && (name === 'shop' || name === 'home'),
         });
       });
     }
-  }
-}
-
-for (const scheme of schemes) {
-  for (const [name, url] of productPages) {
-    test(`${scheme} 390 ${name}`, async ({ page }) => {
-      const errors: string[] = [];
-      page.on('pageerror', (error) => errors.push(error.message));
-      page.on('console', (message) => {
-        if (message.type() === 'error') errors.push(message.text());
-      });
-
-      await page.emulateMedia({ colorScheme: scheme });
-      await page.setViewportSize({ width: 390, height: 844 });
-      await page.goto(url, { waitUntil: 'networkidle' });
-
-      const layout = await overflow(page);
-      expect(layout.scrollWidth, layout.offenders.join('\n')).toBeLessThanOrEqual(layout.viewport + 1);
-      expect(layout.offenders, 'elements wider than the viewport').toEqual([]);
-
-      const axe = await new AxeBuilder({ page }).withRules(['color-contrast']).analyze();
-      expect(axe.violations, JSON.stringify(axe.violations, null, 2)).toEqual([]);
-      await assertProductLayout(page, 390);
-
-      const menu = page.locator('#site-nav');
-      await expect(menu).toBeHidden();
-      expect(errors, 'console errors').toEqual([]);
-
-      await page.screenshot({
-        path: path.join(shotDir, `${scheme}-390-${name}.png`),
-        fullPage: name === 'shop' || name === 'home',
-      });
-    });
   }
 }
 
