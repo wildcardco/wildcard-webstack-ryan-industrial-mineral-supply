@@ -15,13 +15,12 @@ const chips = ['16 ft bed', '9,000 lb load', '12,000 lb lift'];
       class="aspect-[4/3] w-full rounded-[14px] object-cover shadow-lift"
     />
     <div>
-      <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">Reach</p>
-      <h2 class="mt-2 text-[28px] font-extrabold leading-tight tracking-tight text-white md:text-4xl">Pickup and delivery</h2>
+      <h2 class="text-[28px] font-extrabold leading-tight tracking-tight text-white md:text-4xl">Pickup and delivery</h2>
       <p class="mt-3 max-w-md text-white">Chicagoland and Northwest Indiana.</p>
-      <ul class="mt-5 flex flex-wrap gap-2">
+      <ul class="mt-5 space-y-2 rounded-[16px] bg-white p-4 text-navy shadow-card">
         {
           chips.map((chip) => (
-            <li class="rounded-full border-2 border-accent px-3 py-2 text-sm font-bold text-white">{chip}</li>
+            <li class="font-semibold">{chip}</li>
           ))
         }
       </ul>
