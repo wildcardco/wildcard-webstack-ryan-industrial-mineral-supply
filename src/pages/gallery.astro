@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBand from '../components/blocks/PageBand.astro';
+import JobMosaic from '../components/blocks/JobMosaic.astro';
+import { breadcrumbSchema } from '../data/site';
+
+const description =
+  'Before and after job photos from the Griffith shop. Sandblasting and blast media in Griffith, IN. Call (708) 895-6070.';
+---
+
+<Base
+  title="Gallery"
+  description={description}
+  jsonLd={breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Gallery', path: '/gallery' },
+  ])}
+>
+  <PageBand title="Gallery" lede="Before and after photos from the shop." />
+  <JobMosaic />
+</Base>

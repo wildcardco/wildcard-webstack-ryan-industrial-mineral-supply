@@ -1,34 +1,28 @@
 ---
 import BrandButton from '../islands/BrandButton.vue';
-import { business } from '../../data/site';
-
-const links = [
-  { href: '/services', label: 'Services' },
-  { href: '/shop', label: 'Buy Abrasives' },
-  { href: '/contact', label: 'Contact' },
-];
+import { business, navLinks } from '../../data/site';
 ---
 
 <header class="sticky top-0 z-40 border-b border-tint bg-white">
-  <div class="mx-auto flex h-[4.25rem] max-w-6xl items-center gap-3 px-4">
+  <div class="mx-auto flex h-[4.25rem] max-w-6xl items-center gap-2 px-3 xl:gap-3 xl:px-4">
     <a href="/" class="shrink-0">
       <img
         src="/img/logo.png"
         alt="Industrial Mineral Supply"
         width="2593"
         height="1007"
-        class="h-11 w-auto max-w-[46vw] md:max-w-[220px]"
+        class="h-9 w-auto max-w-[38vw] xl:h-11 xl:max-w-[200px]"
       />
     </a>
-    <nav data-nav="desktop" class="ml-auto hidden items-center gap-5 md:flex" aria-label="Primary">
+    <nav data-nav="desktop" class="ml-auto hidden items-center gap-x-2 xl:gap-x-4 md:flex" aria-label="Primary">
       {
-        links.map((link) => (
-          <a href={link.href} class="inline-flex min-h-11 items-center font-bold text-navy">
+        navLinks.map((link) => (
+          <a href={link.href} class="inline-flex min-h-11 items-center whitespace-nowrap text-sm font-bold text-navy xl:text-base">
             {link.label}
           </a>
         ))
       }
-      <BrandButton href={business.phoneHref}>Get a quote</BrandButton>
+      <BrandButton href={business.phoneHref} compact>Get a quote</BrandButton>
     </nav>
   </div>
 </header>

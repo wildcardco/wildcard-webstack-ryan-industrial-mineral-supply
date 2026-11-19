@@ -7,12 +7,13 @@ const props = withDefaults(
     href: string;
     variant?: 'primary' | 'secondary' | 'ghost' | 'navy';
     block?: boolean;
+    compact?: boolean;
   }>(),
-  { variant: 'primary', block: false },
+  { variant: 'primary', block: false, compact: false },
 );
 
 const look = computed(() => {
-  const base = 'font-extrabold rounded-[10px] min-h-11 transition-transform duration-200';
+  const base = `font-extrabold rounded-[10px] min-h-11 transition-transform duration-200${props.compact ? ' px-3 py-2 text-sm' : ''}`;
   const width = props.block ? 'w-full text-center' : '';
   if (props.variant === 'primary') {
     return `${base} ${width} bg-accent text-navy border-0 shadow-card hover:bg-accent hover:shadow-lift hover:-translate-y-0.5 focus:outline-solid focus:outline-[3px] focus:outline-offset-2 focus:outline-navy`;

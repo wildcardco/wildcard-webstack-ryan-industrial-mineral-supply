@@ -3,15 +3,9 @@ import { onMounted, onBeforeUnmount, ref } from 'vue';
 import { FwbSidebar } from 'flowbite-vue';
 import { Menu, X } from 'lucide-vue-next';
 import BrandButton from './BrandButton.vue';
-import { business } from '../../data/site';
+import { business, navLinks } from '../../data/site';
 
 const open = ref(false);
-
-const links = [
-  { href: '/services', label: 'Services' },
-  { href: '/shop', label: 'Buy Abrasives' },
-  { href: '/contact', label: 'Contact' },
-];
 
 function toggle() {
   open.value = !open.value;
@@ -42,10 +36,11 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey));
     <div v-show="open" id="mobile-menu" data-nav="mobile" class="mobile-panel">
       <FwbSidebar>
         <a
-          v-for="link in links"
+          v-for="link in navLinks"
           :key="link.href"
           :href="link.href"
           class="flex min-h-11 items-center rounded-[10px] px-3 text-base font-bold text-navy hover:bg-tint"
+          @click="open = false"
         >
           {{ link.label }}
         </a>

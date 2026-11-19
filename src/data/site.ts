@@ -22,6 +22,15 @@ export const business = {
   // Coordinates from Nominatim for 1944 North Griffith Boulevard, Griffith, IN 46319.
 };
 
+export const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+  { href: "/shop", label: "Buy Abrasives" },
+];
+
 export interface SizeOption {
   label: string;
   price?: string;

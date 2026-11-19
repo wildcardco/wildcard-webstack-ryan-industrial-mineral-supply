@@ -3,6 +3,8 @@ import AxeBuilder from '@axe-core/playwright';
 
 const pages = [
   '/',
+  '/about',
+  '/gallery',
   '/services',
   '/shop',
   '/contact',
@@ -123,3 +125,35 @@ for (const path of pages) {
     }
   }
 }
+
+const menuPaths = ['/', '/services', '/about', '/gallery', '/contact', '/shop'];
+
+test('every nav link resolves', async ({ page, request }) => {
+  async function hrefs(width: number) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto('/', { waitUntil: 'load' });
+    if (width < 768) {
+      await page.locator('[data-nav-toggle]').click();
+      await expect(page.locator('[data-nav="mobile"] a').first()).toBeVisible();
+    }
+    const selector = width < 768 ? '[data-nav="mobile"] a' : '[data-nav="desktop"] a';
+    return page.locator(selector).evaluateAll((els) => els.map((el) => el.getAttribute('href') || ''));
+  }
+
+  const found = [...new Set([...(await hrefs(1440)), ...(await hrefs(390))])];
+  for (const path of menuPaths) expect(found).toContain(path);
+
+  for (const href of found) {
+    if (href.startsWith('tel:')) {
+      expect(href).toBe('tel:+17088956070');
+      continue;
+    }
+    const url = new URL(href, 'http://127.0.0.1:4321');
+    const response = await request.get(url.pathname + url.search);
+    expect(response.status(), href).toBe(200);
+    if (url.hash) {
+      await page.goto(url.pathname + url.search + url.hash, { waitUntil: 'load' });
+      await expect(page.locator(url.hash)).toHaveCount(1);
+    }
+  }
+});
