@@ -99,11 +99,6 @@
   }
 }
 
-.hazard-edge {
-  height: 14px;
-  background: repeating-linear-gradient(-45deg, #edcd1f 0 12px, #020c29 12px 24px);
-}
-
 .snap-row {
   display: flex;
   gap: 1rem;

@@ -4,7 +4,7 @@ Tokens: navy `#020C29`, accent `#EDCD1F` (CTAs, stat numerals, active underline,
 
 Hero: full-bleed outdoor blaster photo, left-weighted navy scrim, white headline, yellow primary quote button, text link to the shop. Headline rises 450ms; yellow underline wipes. Off under reduced motion. No split hero.
 
-Signature: proof band, huge yellow numerals on navy (17+ years, 12,000 lb lift, 9,000 lb load, 5 media types) with a diagonal hazard-stripe edge.
+Signature: proof band, huge yellow numerals on navy (17+ years, 12,000 lb lift, 9,000 lb load, 5 media types).
 
 Home bands and phone layout: photo hero (stack); navy stat band (2-up); white photo service cards (snap scroller); tint mosaic (carousel); white product row with photos and a yellow hover bar (scroller); charcoal delivery split (stack); yellow quote strip (stack); white FAQ accordion. Cards differ: photo cards, stat tiles, mosaic, product photos, chips.
 
